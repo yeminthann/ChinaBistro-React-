@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+body {
+  background: rgb(228, 221, 221);
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar-dark {
+  background-color: rgb(99, 99, 47);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.hr {
+  text-shadow: 3px 2px 3px #000;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.jum-header {
+  color: rgb(24, 102, 61);
+  font-family: monospace;
+  font-weight: bolder;
 }
-
-.App-link {
-  color: #61dafb;
+.jum-img {
+  box-shadow: 2px 2px 2px 2px rgb(146, 138, 138);
+  border-radius: 20px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home-tile {
+  color: #000;
+  font-size: 25px;
+  font-weight: bolder;
+  font-family: monospace;
+}
+.home-card:hover {
+  text-decoration: none;
+}
+.home-card > .card {
+  box-shadow: 3px 3px 3px rgb(94, 92, 88);
+  border-radius: 10px;
+}
+.home-card > .card:hover {
+  box-shadow: 4px 4px 4px rgb(61, 61, 60);
+}
+.footer {
+  background-color: rgb(70, 67, 67);
+  color: wheat;
 }
