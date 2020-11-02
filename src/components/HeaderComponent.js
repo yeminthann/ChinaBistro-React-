@@ -23,8 +23,8 @@ class Header extends Component {
             <Navbar dark expand = "md">
                 <div className = "container">
                     <NavbarBrand>
-                        <img src = "assets/imgs/logo.png" width = "80" height = "80" alt = "logo.png"/>
-                        <p> <img src = "assets/imgs/star.png" alt = "kosher"/>Kohser Certified</p>
+                        <img src = "assets/images/logo.png" width = "80" height = "80" alt = "logo.png"/>
+                        <p> <img src = "assets/images/star.png" alt = "kosher"/>Kohser Certified</p>
                     </NavbarBrand>
                     <Nav>
                     <NavItem>
