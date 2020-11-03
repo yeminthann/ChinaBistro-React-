@@ -36,7 +36,7 @@ const SpecificMenu = (props) => {
             return (
                 <div className = "col-12 col-md-5 m-1 mr-2" key = {item.id}>
                     <FadeTransform
-                        in transformProps = {{exitTransform: 'scale(2) TranslateY(-100%)'}}
+                        in transformProps = {{exitTransform: 'scale(1) TranslateY(-100%)'}}
                     >
                     <RenderSpecificMenu 
                         item = {item}
