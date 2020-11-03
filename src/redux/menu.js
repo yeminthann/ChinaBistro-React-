@@ -3,7 +3,7 @@ import * as ActionTypes from './ActionTypes';
 //lunch reducer function
 export const Menus = (state = {
     isLoading : true,
-    lunchs: [],
+    menus: [],
     errMsg: null
 }, action) => {
     switch(action.type) {

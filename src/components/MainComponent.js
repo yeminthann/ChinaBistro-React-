@@ -7,6 +7,7 @@ import SpecificMenu from './SpecificMenu';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { fetchMenu } from '../redux/ActionCreaters';
+import DishDetail from './DishDetail';
 
 const mapStateToProps = state => {
     return {
@@ -19,9 +20,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class Main extends Component {
-    constructor(props) {
-        super(props);
-    }
     
     componentDidMount() {
         this.props.fetchMenu();
@@ -30,21 +28,46 @@ class Main extends Component {
     render() {
 
         const MenuPage = () => {
-            const lunch = this.props.menus.menus.filter(item => (item.category === 'lunchs' && item.featured))[0];
-            const soup = this.props.menus.menus.filter(item => (item.category === 'soups' && item.featured))[0];
+
             return(
-                <Menu lunch = {lunch} soup = {soup}/>
+                <Menu 
+                lunch = {this.props.menus.menus.filter(item => {
+                    return (item.category === 'lunchs' && item.featured)
+                })[0]}
+                soup = {this.props.menus.menus.filter(item => {
+                    return (item.category === 'soups' && item.featured)
+                })[0]}
+                isLoading = {this.props.menus.isLoading}
+                errMsg = {this.props.menus.errMsg}
+                />
             );
         }
 
         const SpecificMenuPage = ({match}) => {
-            const items = this.props.menus.menus.filter(item => item.category === (match.params.specific_menu) && !item.featured);
+
             return (
                 <SpecificMenu
-                    items = {items}
+                items = {this.props.menus.menus.filter(item => {
+                   return (item.category === match.params.specific_menu && !item.featured)
+                })}
+                isLoading = {this.props.menus.isLoading}
+                errMsg = {this.props.menus.errMsg}
                 />
             );
-        }
+        };
+
+        const DishDetailPage = ({match}) => {
+            return (
+                <DishDetail 
+                item = {this.props.menus.menus.filter(item => {
+                    return ((item.category === match.params.specific_menu) && (item.label === match.params.label && !item.featured))
+                 })}
+                 isLoading = {this.props.menus.isLoading}
+                 errMsg = {this.props.menus.errMsg}
+                />
+            );
+        };
+
         return (
             <div>
                 <Header />
@@ -52,7 +75,8 @@ class Main extends Component {
                 <Switch>
                     <Route  path = "/home" component = {Home} />
                     <Route exact path = "/menu" component = {MenuPage} />
-                    <Route path = "/menu/:specific_menu" component = {SpecificMenuPage} />
+                    <Route exact path = "/menu/:specific_menu" component = {SpecificMenuPage} />
+                    <Route path = "/menu/:specific_menu/:label" component = {DishDetailPage} />
                     <Redirect to = "/home" />
                 </Switch>
                 <Footer />

@@ -45,7 +45,7 @@ export const MENU = [
         name: 'Hot and Sour Soup',
         image: '/assets/images/menu/A/A4.jpg',
         category: 'soups',
-        label: 'A5',
+        label: 'A4',
         price: '$10.95',
         featured: false,
         description: 'tofu, chicken, mushroom, bamboo shoot, and egg.'

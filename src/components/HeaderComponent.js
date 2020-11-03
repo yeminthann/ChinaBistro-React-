@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, Button } from 'reactstrap';
-import { Link, NavLink } from 'react-router-dom';
+import {  NavLink } from 'react-router-dom';
 
 class Header extends Component {
     constructor (props) {
@@ -23,8 +23,8 @@ class Header extends Component {
             <Navbar dark expand = "md">
                 <div className = "container">
                     <NavbarBrand>
-                        <img src = "assets/images/logo.png" width = "80" height = "80" alt = "logo.png"/>
-                        <p> <img src = "assets/images/star.png" alt = "kosher"/>Kohser Certified</p>
+                        <img src = "/assets/images/logo.png" width = "80" height = "80" alt = "logo.png"/>
+                        <p> <img src = "/assets/images/star.png" alt = "kosher"/>Kohser Certified</p>
                     </NavbarBrand>
                     <Nav>
                     <NavItem>

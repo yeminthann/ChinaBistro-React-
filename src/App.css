@@ -37,12 +37,16 @@ body {
 .card-link:hover {
   text-decoration: none;
 }
-.card-link .card {
+.card {
   box-shadow: 1px 5px 5px 2px rgb(94, 92, 88);
   border-radius: 10px;
 }
 .card-link .card:hover {
   box-shadow: 2px 5px 5px 2px rgb(61, 61, 60);
+}
+.card .label {
+  background: rgb(121, 172, 161);
+  margin-bottom: 0;
 }
 .footer {
   background-color: rgb(70, 67, 67);

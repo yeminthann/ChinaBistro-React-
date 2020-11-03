@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardGroup, CardHeader, CardImg, CardTitle } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Card, CardHeader, CardImg } from 'reactstrap';
 import { Loading } from './LoadingComponent';
 
 function RenderCard({isLoading, item, errMsg}) {
@@ -15,9 +15,7 @@ function RenderCard({isLoading, item, errMsg}) {
         );
     }
     else {
-        // console.log(item.image)
         return (
-            <CardGroup>
             <Link to = {`/menu/${item.category}`} className = "card-link">
                 <Card>
                     <CardImg src = {item.image} alt = {item.category} width = "100%" />
@@ -26,7 +24,6 @@ function RenderCard({isLoading, item, errMsg}) {
                     </CardHeader>
                 </Card>
             </Link>
-            </CardGroup>
         );
     }
 }
@@ -44,18 +41,18 @@ function Menu (props) {
                     </BreadcrumbItem>
                 </Breadcrumb>
                 <div className = "row">
-                    <div className = "col-12col-md-4 mb-2">
+                    <div className = "col-12 col-md-4 mb-2">
                         <RenderCard 
                         item = {props.lunch}
-                        isLoading = {props.lunchLoading}
-                        errMsg = {props.lunchErrMsg}
+                        isLoading = {props.isLoading}
+                        errMsg = {props.errMsg}
                         />
                     </div>
                 <div className = "col-12 col-md-4 mb-2">
                         <RenderCard 
                             item = {props.soup}
-                            isLoading = {props.soupLoading}
-                            errMsg = {props.soupErrMsg}
+                            isLoading = {props.isLoading}
+                            errMsg = {props.errMsg}
                             />
                 </div>
             </div>
