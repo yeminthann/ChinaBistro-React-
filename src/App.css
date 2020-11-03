@@ -48,6 +48,12 @@ body {
   background: rgb(121, 172, 161);
   margin-bottom: 0;
 }
+.breadcrumb {
+  background-color: rgb(77, 72, 72);
+}
+.breadcrumb-item:hover {
+  font-size: large;
+}
 .footer {
   background-color: rgb(70, 67, 67);
   color: wheat;

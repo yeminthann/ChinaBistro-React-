@@ -148,6 +148,196 @@ export const MENU = [
         price: '$10.95',
         featured: false,
         description: 'chunks of chicken, breaded and deep-fried with sauce and scallions; white meat by request, $1 for white meat.'
+    },
+    {
+        id: 15,
+        name: 'Chicken Cashewnuts',
+        image: '/assets/images/menu/L/L3.jpg',
+        category: 'lunchs',
+        label: 'L3',
+        price: '$10.95',
+        featured: false,
+        description: 'diced chicken with waterchestnuts, green peppers, and celery, and cashewnuts; white meat by request, $1 extra for white meat.'
+    },
+    {
+        id: 16,
+        name: 'Kung Pao Chicken',
+        image: '/assets/images/menu/L/L4.jpg',
+        category: 'lunchs',
+        label: 'L4',
+        price: '$10.95',
+        featured: false,
+        description: 'Dark meat chicken sauteed with carrots and celery, in a spicy Szechuan sauce, $1 more for white meat chicken.'
+    },
+    {
+        id: 17,
+        name: 'Chicken String Bean',
+        image: '/assets/images/menu/L/L5.jpg',
+        category: 'lunchs',
+        label: 'L5',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with string beans and soy sauce'
+    },
+    {
+        id: 18,
+        name: 'Chicken Vegetable',
+        image: '/assets/images/menu/L/L6.jpg',
+        category: 'lunchs',
+        label: 'L6',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken in a clear white sauce sauteed with mixed vegetables'
+    },
+    {
+        id: 19,
+        name: 'Beef Egg Roll',
+        image: '/assets/images/menu/B/B1.jpg',
+        category: 'appetizers',
+        label: 'B1',
+        price: '$10.95',
+        featured: false,
+        description: 'eggroll with cabbage, carrots and beef'
+    },
+    {
+        id: 20,
+        name: 'Spring Roll (1)',
+        image: '/assets/images/menu/B/B2.jpg',
+        category: 'appetizers',
+        label: 'B2',
+        price: '$10.95',
+        featured: false,
+        description: 'thin wraps with white meat and cabbage'
+    },
+    {
+        id: 21,
+        name: 'Vegetable Egg Roll (1)',
+        image: '/assets/images/menu/B/B3.jpg',
+        category: 'appetizers',
+        label: 'B3',
+        price: '$10.95',
+        featured: false,
+        description: 'cabbage and carrots in eggroll wrappers'
+    },
+    {
+        id: 22,
+        name: 'Fried Won Ton with Chicken Meat (6)',
+        image: '/assets/images/menu/B/B4.jpg',
+        category: 'appetizers',
+        label: 'B4',
+        price: '$10.95',
+        featured: false,
+        description: 'triangle shaped won ton with ground white meat chicken inside'
+    },
+    {
+        id: 23,
+        name: 'Chicken Toast (4)',
+        image: '/assets/images/menu/B/B5.jpg',
+        category: 'appetizers',
+        label: 'B5',
+        price: '$10.95',
+        featured: false,
+        description: 'ground chicken meat on bread, deep-fried, comes with 4 pieces'
+    },
+    {
+        id: 24,
+        name: 'Chicken Vegetable',
+        image: '/assets/images/menu/B/B.jpg',
+        category: 'appetizers',
+        label: '',
+        price: '$10.95',
+        featured: true,
+        description: 'white meat chicken in a clear white sauce sauteed with mixed vegetables'
+    },
+    {
+        id: 25,
+        name: 'Chicken Vegetable',
+        image: '/assets/images/menu/SP/SP.jpg',
+        category: 'specials',
+        label: '',
+        price: '$10.95',
+        featured: true,
+        description: 'white meat chicken in a clear white sauce sauteed with mixed vegetables'
+    },
+    {
+        id: 26,
+        name: 'Chinese Scallion Pancake Wrap',
+        image: '/assets/images/menu/SP/SP1.jpg',
+        category: 'specials',
+        label: 'SP1',
+        price: '$10.95',
+        featured: false,
+        description: 'with choice of string bean, string bean chicken, string bean beef, beef onions, moo shu vegetable'
+    },
+    {
+        id: 27,
+        name: 'Teriyaki Chicken',
+        image: '/assets/images/menu/SP/SP2.jpg',
+        category: 'specials',
+        label: 'SP2',
+        price: '$10.95',
+        featured: false,
+        description: 'marinated grilled chicken breast with vegetables and lo mein on the side'
+    },
+    {
+        id: 28,
+        name: 'Vegetable Tempura',
+        image: '/assets/images/menu/SP/SP3.jpg',
+        category: 'specials',
+        label: 'SP3',
+        price: '$10.95',
+        featured: false,
+        description: 'assorted vegetables breaded and fried, served with lo mein on the side'
+    },
+    {
+        id: 29,
+        name: 'Orange Chicken and Beef Combo',
+        image: '/assets/images/menu/SP/SP4.jpg',
+        category: 'specials',
+        label: 'SP4',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken and beef, breaded and deep-fried with special house sauce; served with lo mein and vegetables'
+    },
+    {
+        id: 30,
+        name: 'Happy Family',
+        image: '/assets/images/menu/SP/SP5.jpg',
+        category: 'appetizers',
+        label: 'SP5',
+        price: '$10.95',
+        featured: false,
+        description: 'beef, veal, and chicken sauteed with mixed vegetables in chef\'s special sauce; lo mein served on the side'
+    },
+    {
+        id: 31,
+        name: 'Grilled Veal',
+        image: '/assets/images/menu/SP/SP6.jpg',
+        category: 'specials',
+        label: 'SP6',
+        price: '$10.95',
+        featured: false,
+        description: 'marinated and grilled veal served with vegetables and lo mein on the side'
+    },
+    {
+        id: 31,
+        name: 'Orange Beef',
+        image: '/assets/images/menu/SP/SP7.jpg',
+        category: 'specials',
+        label: 'SP7',
+        price: '$10.95',
+        featured: false,
+        description: 'a few cuts of beef, breaded, deep-fried with sauce containing orange peels; served with lo mein on the side'
+    },
+    {
+        id: 31,
+        name: 'Sesame Beef',
+        image: '/assets/images/menu/SP/SP8.jpg',
+        category: 'specials',
+        label: 'SP8',
+        price: '$10.95',
+        featured: false,
+        description: 'a few cuts of beef, breaded, deep-fried with sauce containing sesame seeds; served with lo mein on the side'
     }
 ];
 

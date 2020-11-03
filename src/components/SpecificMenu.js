@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardImg, Breadcrumb, BreadcrumbItem, CardTitle, CardBody } from 'reactstrap'
+import { Card, CardImg, Breadcrumb, BreadcrumbItem, CardTitle, CardBody,CardGroup } from 'reactstrap'
 import { Loading } from './LoadingComponent';
 function RenderSpecificMenu({item}) {
         return(
             <Link to = {`/menu/${item.category}/${item.label}`} className = "card-link">
-            <CardBody>
+            <CardGroup className = "m-2">
                 <Card>
                     <CardImg top src = {item.image} alt = {item.name} width = "100%" />
                     <CardBody>
@@ -14,7 +14,7 @@ function RenderSpecificMenu({item}) {
                     </CardTitle>
                     </CardBody>
                 </Card>
-            </CardBody>
+            </CardGroup>
             </Link>
         );
 }
@@ -43,8 +43,10 @@ const SpecificMenu = (props) => {
         var breadcrumbName = props.items.map(item => item.category)[0];
         return (
             <div className = "container">
-            <div className = "row">
-                <Breadcrumb>
+                <Breadcrumb className = "font-weight-bold sticky-top">
+                    <BreadcrumbItem>
+                        <Link to = "/home">Home</Link>
+                    </BreadcrumbItem>
                     <BreadcrumbItem>
                         <Link to = "/menu">Menu</Link>
                     </BreadcrumbItem>
@@ -52,14 +54,14 @@ const SpecificMenu = (props) => {
                         {breadcrumbName}
                     </BreadcrumbItem>
                 </Breadcrumb>
-
-                <div className = "col-12 text-uppercase text-center">
-                    <h3>{breadcrumbName}</h3> <hr/>
+                <div className = "row">
+                    <div className = "col-12 text-uppercase text-center">
+                        <h3>{breadcrumbName} MENU</h3> <hr/>
+                    </div>
                 </div>
-            </div>
-            <div className = "row">
-                    {menu}
-            </div>
+                <div className = "row">
+                        {menu}
+                </div>
             </div>
         );
     }

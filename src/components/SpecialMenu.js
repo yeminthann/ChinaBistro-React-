@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardGroup, CardImg, CardImgOverlay, CardTitle, Media } from 'reactstrap';
+import { CardGroup,Card, CardImg, CardImgOverlay, Breadcrumb, BreadcrumbItem, Media } from 'reactstrap';
+import { Link } from 'react-router-dom'
 import { Loading } from './LoadingComponent';
 
-function RenderDishDetail ({item}) {
+function RenderSpecialMenu ({item}) {
     return(
         <div className = "container">
             <div className = "row">
@@ -29,10 +29,9 @@ function RenderDishDetail ({item}) {
     );
 }
 
-const DishDetail = (props) => {
-
+const SpecialMenu = (props) => {
     if(props.isLoading) {
-        return(
+        return (
             <Loading />
         );
     }
@@ -42,34 +41,31 @@ const DishDetail = (props) => {
         );
     }
     else {
-        const itemDetail = props.item.map(item => {
+        const specialItems = props.items.map(item => {
 
-            return(
+            return (
                 <div key = {item.id}>
-                    <RenderDishDetail item = {item} />
+                    <RenderSpecialMenu item = {item} />
+                    <hr className = "bg-info"/>
                 </div>
             );
         });
-
-        const item = props.item.map(item => item)[0];
-        return (
+        const item = props.items.map(item => item)[0];
+        return(
             <div className = "container">
             <Breadcrumb className = "font-weight-bold sticky-top">
             <BreadcrumbItem>
                 <Link to = "/home">Home</Link>
             </BreadcrumbItem>
-            <BreadcrumbItem>
-                <Link to = "/menu">Menu</Link>
-            </BreadcrumbItem>
             <BreadcrumbItem className = "text-capitalize">
-                <Link to = {`/menu/${item.category}`}>{item.category}</Link>
+                {item.category}
             </BreadcrumbItem>
-            <BreadcrumbItem>{item.label}</BreadcrumbItem>
             </Breadcrumb>
-            {itemDetail}
+            {specialItems}
             </div>
         );
     }
-};
+}
 
-export default DishDetail; 
+
+export default SpecialMenu;

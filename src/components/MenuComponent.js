@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Breadcrumb, BreadcrumbItem, Card, CardHeader, CardImg } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Card, CardGroup, CardHeader, CardImg, CardTitle } from 'reactstrap';
 import { Loading } from './LoadingComponent';
 
 function RenderCard({isLoading, item, errMsg}) {
@@ -17,12 +17,14 @@ function RenderCard({isLoading, item, errMsg}) {
     else {
         return (
             <Link to = {`/menu/${item.category}`} className = "card-link">
+                <CardGroup className = "m-2">
                 <Card>
                     <CardImg src = {item.image} alt = {item.category} width = "100%" />
-                    <CardHeader className = "text-center text-uppercase card-header">
+                    <CardTitle className = "text-center text-uppercase card-header">
                         {item.category}
-                    </CardHeader>
+                    </CardTitle>
                 </Card>
+                </CardGroup>
             </Link>
         );
     }
@@ -32,7 +34,7 @@ function Menu (props) {
 
         return (
             <div className = "container">
-                <Breadcrumb>
+                <Breadcrumb className = "font-weight-bold sticky-top">
                     <BreadcrumbItem>
                         <Link to = "/home">Home</Link>
                     </BreadcrumbItem>
@@ -53,7 +55,14 @@ function Menu (props) {
                             item = {props.soup}
                             isLoading = {props.isLoading}
                             errMsg = {props.errMsg}
-                            />
+                        />
+                </div>
+                <div className = "col-12 col-md-4 mb-2">
+                        <RenderCard 
+                            item = {props.appetizer}
+                            isLoading = {props.isLoading}
+                            errMsg = {props.errMsg}
+                        />
                 </div>
             </div>
             </div>
