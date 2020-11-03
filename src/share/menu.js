@@ -320,7 +320,7 @@ export const MENU = [
         description: 'marinated and grilled veal served with vegetables and lo mein on the side'
     },
     {
-        id: 31,
+        id: 32,
         name: 'Orange Beef',
         image: '/assets/images/menu/SP/SP7.jpg',
         category: 'specials',
@@ -330,7 +330,7 @@ export const MENU = [
         description: 'a few cuts of beef, breaded, deep-fried with sauce containing orange peels; served with lo mein on the side'
     },
     {
-        id: 31,
+        id: 33,
         name: 'Sesame Beef',
         image: '/assets/images/menu/SP/SP8.jpg',
         category: 'specials',

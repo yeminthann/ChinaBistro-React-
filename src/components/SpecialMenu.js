@@ -2,6 +2,7 @@ import React from 'react';
 import { CardGroup,Card, CardImg, CardImgOverlay, Breadcrumb, BreadcrumbItem, Media } from 'reactstrap';
 import { Link } from 'react-router-dom'
 import { Loading } from './LoadingComponent';
+import { Stagger, Fade } from 'react-animation-components';
 
 function RenderSpecialMenu ({item}) {
     return(
@@ -44,10 +45,12 @@ const SpecialMenu = (props) => {
         const specialItems = props.items.map(item => {
 
             return (
-                <div key = {item.id}>
-                    <RenderSpecialMenu item = {item} />
-                    <hr className = "bg-info"/>
-                </div>
+                <Fade in>
+                    <div key = {item.id}>
+                        <RenderSpecialMenu item = {item} />
+                        <hr className = "bg-info"/>
+                    </div>
+                </Fade>
             );
         });
         const item = props.items.map(item => item)[0];
@@ -61,7 +64,12 @@ const SpecialMenu = (props) => {
                 {item.category}
             </BreadcrumbItem>
             </Breadcrumb>
-            {specialItems}
+
+            <Media list>
+                <Stagger in>
+                    {specialItems}
+                </Stagger>
+            </Media>
             </div>
         );
     }

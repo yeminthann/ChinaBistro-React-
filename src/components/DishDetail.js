@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardGroup, CardImg, CardImgOverlay, CardTitle, Media } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Card, CardGroup, CardImg, CardImgOverlay, Media } from 'reactstrap';
 import { Loading } from './LoadingComponent';
+import { FadeTransform } from 'react-animation-components';
 
 function RenderDishDetail ({item}) {
     return(
         <div className = "container">
             <div className = "row">
                 <div className = "col-12 col-md-5 m-1">
+                <FadeTransform
+                    in transformProps = {{exitTransform: 'scale(0.5) TranslateX(-100%)'}}
+                >
                     <CardGroup>
                         <Card>
                             <CardImg src = {item.image} alt = {item.name} width = "100%"/>
@@ -18,11 +22,16 @@ function RenderDishDetail ({item}) {
                             </CardImgOverlay>
                         </Card>
                     </CardGroup>
+                </FadeTransform>
                 </div>
                 <div className = "col-12 col-md-5 m-1">
-                        <Media heading className = "text-center text-md-left">{item.name}</Media>
-                        <p className = "text-center text-md-left font-weight-bold">{item.price}</p>
-                        <p className = "text-justify font-italic">{item.description}</p>
+                <FadeTransform
+                    in transformProps = {{exitTransform: 'scale(0.5) TranslateX(100%)'}}
+                >
+                    <Media heading className = "text-center text-md-left">{item.name}</Media>
+                    <p className = "text-center text-md-left font-weight-bold">{item.price}</p>
+                    <p className = "text-justify font-italic">{item.description}</p>
+                </FadeTransform>
                 </div>
             </div>
         </div>
@@ -46,7 +55,8 @@ const DishDetail = (props) => {
 
             return(
                 <div key = {item.id}>
-                    <RenderDishDetail item = {item} />
+
+                        <RenderDishDetail item = {item} />
                 </div>
             );
         });

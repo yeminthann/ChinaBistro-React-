@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Jumbotron, CardHeader, CardImg } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { FadeTransform } from 'react-animation-components';
 class Home extends Component {
     render() {
         return (
@@ -23,6 +24,9 @@ class Home extends Component {
                 </Jumbotron>
                 <div className = "row">
                     <div className = "col-12 col-sm-6 col-md-4 mb-2">
+                        <FadeTransform
+                            in transformProps = {{exitTransform: 'scale(0.5) TranslateX(-100%)'}}
+                        >
                         <Link to = "/menu" className = "card-link">
                             <Card>
                                 <CardImg src = "/assets/images/menu-tile.jpg" alt = "menu-tile" width = "100%"/>
@@ -31,8 +35,12 @@ class Home extends Component {
                                 </CardHeader>
                             </Card>
                         </Link>
+                        </FadeTransform>      
                     </div>
                     <div className = "col-12 col-sm-6 col-md-4 mb-2">
+                    <FadeTransform
+                            in transformProps = {{exitTransform: 'scale(0.5) TranslateY(-100%)'}}
+                    >
                     <Link to = "/specials" className = "card-link">
                             <Card>
                                 <CardImg src = "/assets/images/specials-tile.jpg" alt = "menu-tile" width = "100%"/>
@@ -40,9 +48,13 @@ class Home extends Component {
                                         Specials
                                 </CardHeader>
                             </Card>
-                        </Link>
+                    </Link>
+                    </FadeTransform>
                     </div>
                     <div className = "col-12 col-sm-12 col-md-4 mb-1">
+                    <FadeTransform
+                            in transformProps = {{exitTransform: 'scale(0.5) TranslateX(100%)'}}
+                    >
                     <Link to = "/menu" className = "card-link">
                             <Card>
                                 <CardImg src = "/assets/images/menu-tile.jpg" alt = "menu-tile" width = "100%"/>
@@ -50,7 +62,8 @@ class Home extends Component {
                                         Menu
                                 </CardHeader>
                             </Card>
-                        </Link>
+                    </Link>
+                    </FadeTransform>
                     </div>
                 </div>
             </div>

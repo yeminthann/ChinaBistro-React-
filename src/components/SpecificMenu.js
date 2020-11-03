@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardImg, Breadcrumb, BreadcrumbItem, CardTitle, CardBody,CardGroup } from 'reactstrap'
+import { FadeTransform } from 'react-animation-components';
 import { Loading } from './LoadingComponent';
 function RenderSpecificMenu({item}) {
         return(
@@ -34,9 +35,13 @@ const SpecificMenu = (props) => {
         const menu = props.items.map(item => {
             return (
                 <div className = "col-12 col-md-5 m-1 mr-2" key = {item.id}>
+                    <FadeTransform
+                        in transformProps = {{exitTransform: 'scale(2) TranslateY(-100%)'}}
+                    >
                     <RenderSpecificMenu 
                         item = {item}
-                    />
+                        />
+                    </FadeTransform>
                 </div>
             );
         });

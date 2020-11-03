@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem, Card, CardGroup, CardHeader, CardImg, CardTitle } from 'reactstrap';
 import { Loading } from './LoadingComponent';
+import { FadeTransform } from 'react-animation-components';
 
 function RenderCard({isLoading, item, errMsg}) {
     if(isLoading) {
@@ -44,25 +45,37 @@ function Menu (props) {
                 </Breadcrumb>
                 <div className = "row">
                     <div className = "col-12 col-md-4 mb-2">
+                    <FadeTransform
+                        in transformProps = {{exitTransform: 'scale(0.5) TranslateX(-100%)'}}
+                    >
                         <RenderCard 
                         item = {props.lunch}
                         isLoading = {props.isLoading}
                         errMsg = {props.errMsg}
                         />
+                    </FadeTransform>
                     </div>
                 <div className = "col-12 col-md-4 mb-2">
-                        <RenderCard 
-                            item = {props.soup}
-                            isLoading = {props.isLoading}
-                            errMsg = {props.errMsg}
-                        />
+                <FadeTransform
+                    in transformProps = {{exitTransform: 'scale(0.5) TranslateY(-100%)'}}
+                >
+                    <RenderCard 
+                        item = {props.soup}
+                        isLoading = {props.isLoading}
+                        errMsg = {props.errMsg}
+                    />
+                </FadeTransform>
                 </div>
                 <div className = "col-12 col-md-4 mb-2">
-                        <RenderCard 
-                            item = {props.appetizer}
-                            isLoading = {props.isLoading}
-                            errMsg = {props.errMsg}
-                        />
+                <FadeTransform
+                    in transformProps = {{exitTransform: 'scale(0.5) TranslateX(100%)'}}
+                >
+                    <RenderCard 
+                        item = {props.appetizer}
+                        isLoading = {props.isLoading}
+                        errMsg = {props.errMsg}
+                    />
+                </FadeTransform>
                 </div>
             </div>
             </div>
