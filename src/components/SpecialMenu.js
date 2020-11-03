@@ -64,7 +64,9 @@ const SpecialMenu = (props) => {
                 {item.category}
             </BreadcrumbItem>
             </Breadcrumb>
-
+            <h3 className = "text-center p-2">
+                CHIEF'S RECOMMENDATION MENU <hr className = "bg-warning"/>
+            </h3>
             <Media list>
                 <Stagger in>
                     {specialItems}

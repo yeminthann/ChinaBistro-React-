@@ -338,6 +338,96 @@ export const MENU = [
         price: '$10.95',
         featured: false,
         description: 'a few cuts of beef, breaded, deep-fried with sauce containing sesame seeds; served with lo mein on the side'
+    },
+    {
+        id: 34,
+        name: 'Sesame Beef',
+        image: '/assets/images/menu/C/C.jpg',
+        category: 'chickens',
+        label: 'C',
+        price: '$10.95',
+        featured: true,
+        description: 'a few cuts of beef, breaded, deep-fried with sauce containing sesame seeds; served with lo mein on the side'
+    },
+    {
+        id: 35,
+        name: 'Orange Chicken',
+        image: '/assets/images/menu/C/C1.jpg',
+        category: 'chickens',
+        label: 'C1',
+        price: '$10.95',
+        featured: false,
+        description: 'chunks of chicken, breaded and deep-fried with sauce containing orange peels; white meat by request: for pint $1 extra, for large $2 extra'
+    },
+    {
+        id: 36,
+        name: 'General Tso\'s Chicken',
+        image: '/assets/images/menu/C/C2.jpg',
+        category: 'chickens',
+        label: 'C2',
+        price: '$10.95',
+        featured: false,
+        description: 'chunks of chicken, breaded and deep-fried with sauce and scallions; white meat by request: for pint $1 extra, for large $2 extra'
+    },
+    {
+        id: 37,
+        name: 'White Meat Chicken with String Bean',
+        image: '/assets/images/menu/C/C3.jpg',
+        category: 'chickens',
+        label: 'C3',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with string beans and soy sauce'
+    },
+    {
+        id: 38,
+        name: 'White Meat Chicken with Eggplant In Garlic Sauce',
+        image: '/assets/images/menu/C/C4.jpg',
+        category: 'chickens',
+        label: 'C4',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken, string beans, waterchestnuts, mushrooms, and eggplant, in garlic sauce'
+    },
+    {
+        id: 39,
+        name: 'Chicken Cashewnuts',
+        image: '/assets/images/menu/C/C5.jpg',
+        category: 'chickens',
+        label: 'C5',
+        price: '$10.95',
+        featured: false,
+        description: 'diced chicken with waterchestnuts, green peppers, and celery, and cashewnuts; white meat by request: for pint $1 extra, for large $2 extra'
+    },
+    {
+        id: 40,
+        name: 'White Meat Chicken with Fresh Vegetables',
+        image: '/assets/images/menu/C/C6.jpg',
+        category: 'chickens',
+        label: 'C6',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken in a clear white sauce sauteed with mixed vegetables'
+    },
+    {
+        id: 41,
+        name: 'Sesame Chicken',
+        image: '/assets/images/menu/C/C7.jpg',
+        category: 'chickens',
+        label: 'C7',
+        price: '$10.95',
+        featured: false,
+        description: 'chunks of chicken, breaded and deep-fried with a sesame seed sauce'
+    },
+    {
+        id: 42,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/C/C8.jpg',
+        category: 'chickens',
+        label: 'C8',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
     }
 ];
 
