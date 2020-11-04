@@ -12,6 +12,7 @@ import Contact from '../share/ContactComponent';
 import About from './AboutComponent';
 import Award from './AwardComponent';
 import SpecialMenu from './SpecialMenu';
+import ScrollToTop from './ScrollToTop';
 
 const mapStateToProps = state => {
     return {
@@ -89,6 +90,7 @@ class Main extends Component {
         return (
             <div>
                 <Header />
+                <ScrollToTop />
                 <Switch>
                     <Route  path = "/home" component = {Home} />
                     <Route exact path = "/menu" component = {MenuPage} />
