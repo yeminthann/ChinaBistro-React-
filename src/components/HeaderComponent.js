@@ -56,14 +56,15 @@ class Header extends Component {
         })
     }
 
-    handleLogin (e) {
+    handleLogin (e, field) {
         this.toggleModal();
         alert(`Email: ${this.email.value}, password: ${this.password.value}, remember: ${this.remember.checked}`);
         this.setState({
             isDisable: false,
             email: '',
             password: '',
-            message: 'No account yet? Register right there ===>'
+            message: 'No account yet? Register right there ===>',
+            touched: false
         })
         e.preventDefault();
     }
@@ -84,7 +85,7 @@ class Header extends Component {
         })
     }
 
-    handleSignup (e) {
+    handleSignup (e, field) {
         this.toggleSignup();
         alert(`Have a nice day ${this.firstname.value} ${this.lastname.value} \n You can login now with: \n email: ${this.email.value} \n password: ${this.password.value}`);
         this.setState({
@@ -93,7 +94,8 @@ class Header extends Component {
             firstname: '',
             lastname: '',
             email: '',
-            password: ''
+            password: '',
+            touched: false
         })
         e.preventDefault();
     }
@@ -330,7 +332,7 @@ class Header extends Component {
                             required
                             value = {this.state.password}
                             onChange = {this.handleInputChange}
-                            onBlur = {this.handleBlur}
+                            onBlur = {this.handleBlur('password')}
                             valid = {errors.password === ''}
                             invalid = {errors.password !== ''}
                             name = "password"
