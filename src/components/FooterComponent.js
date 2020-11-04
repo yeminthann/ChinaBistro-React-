@@ -42,7 +42,8 @@ class Footer extends Component {
                     </div>
                     <div className = "col-12">
                         <div className = "text-center">
-                        &copy; Copyright David Chu's China Bistro | Created by <a href = "https://m.facebook.com/yemin.than.3705" target = "_blank" className = "font-weight-bold">Ye Min Than</a> with <a href = "http://reactjs.org/" className = "font-weight-light" target = "_blank">
+                        &copy; Copyright David Chu's China Bistro | Created by <a href = "https://m.facebook.com/yemin.than.3705" target = "_blank" rel = "noopener noreferrer" className = "font-weight-bold">Ye Min Than</a> with <a href = "http://reactjs.org/" 
+                        rel = "noopener noreferrer" className = "font-weight-light" target = "_blank">
                         React
                         </a>
                         </div>
