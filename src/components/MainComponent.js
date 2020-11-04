@@ -13,6 +13,7 @@ import About from './AboutComponent';
 import Award from './AwardComponent';
 import SpecialMenu from './SpecialMenu';
 import ScrollToTop from './ScrollToTop';
+import { actions } from 'react-redux-form';
 
 const mapStateToProps = state => {
     return {
@@ -21,7 +22,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    fetchMenu: () => {dispatch(fetchMenu())}
+    fetchMenu: () => {dispatch(fetchMenu())},
+    resetForm: () => {dispatch(actions.reset('reset'))}
 });
 
 class Main extends Component {
@@ -89,7 +91,7 @@ class Main extends Component {
 
         return (
             <div>
-                <Header />
+                <Header/>
                 <ScrollToTop />
                 <Switch>
                     <Route  path = "/home" component = {Home} />

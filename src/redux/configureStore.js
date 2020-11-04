@@ -7,7 +7,7 @@ import logger from 'redux-logger';
 export const configureStore = () => {
     const store = createStore(
         combineReducers({
-            menus: Menus
+            menus: Menus,
         }),
         applyMiddleware(thunk, logger)
     );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input, FormFeedback } from 'reactstrap';
 import {  NavLink } from 'react-router-dom';
 
 class Header extends Component {
@@ -11,7 +11,18 @@ class Header extends Component {
             isModalOpen: false,
             isSignupOpen: false,
             message: 'No account yet? Register right there ===>',
-            isDisable: false
+            isDisable: false,
+
+            firstname: '',
+            lastname: '',
+            email: '',
+            password: '',
+            touched: {
+                firstname: false,
+                lastname: false,
+                email: false,
+                password: false
+            }
         };
         this.toggleNav = this.toggleNav.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
@@ -19,6 +30,8 @@ class Header extends Component {
         this.handleLogin = this.handleLogin.bind(this);
         this.handleSignup = this.handleSignup.bind(this);
         this.blurNav = this.blurNav.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleBlur = this.handleBlur.bind(this);
     }
 
     toggleNav () {
@@ -46,7 +59,29 @@ class Header extends Component {
     handleLogin (e) {
         this.toggleModal();
         alert(`Email: ${this.email.value}, password: ${this.password.value}, remember: ${this.remember.checked}`);
+        this.setState({
+            isDisable: false,
+            email: '',
+            password: '',
+            message: 'No account yet? Register right there ===>'
+        })
         e.preventDefault();
+    }
+
+    handleInputChange(e) {
+        const target = e.target;
+        const value = target.value;
+        const name = target.name;
+
+        this.setState({
+            [name]: value
+        })
+    }
+
+    handleBlur = field  => evt => {
+        this.setState({
+            touched: {...this.state.touched, [field]: true}
+        })
     }
 
     handleSignup (e) {
@@ -54,11 +89,49 @@ class Header extends Component {
         alert(`Have a nice day ${this.firstname.value} ${this.lastname.value} \n You can login now with: \n email: ${this.email.value} \n password: ${this.password.value}`);
         this.setState({
             message: '<=== Login here: Successfully Registered.',
-            isDisable: true
+            isDisable: true,
+            firstname: '',
+            lastname: '',
+            email: '',
+            password: ''
         })
         e.preventDefault();
     }
+
+
+    validate(firstname, lastname, email, password) {
+        const errors = {
+            firstname: '',
+            lastname: '',
+            email: '',
+            password: ''
+        };
+
+        if(this.state.touched.firstname && firstname.length < 3){
+            errors.firstname = 'Should be greater than 3 characters!'
+
+        }
+        if(this.state.touched.lastname && lastname.length < 3 ) {
+            errors.lastname = 'Should be greater than 3 characters!'
+        }
+        if(this.state.touched.email && email.split('').filter(x => x === '@').length < 1) {
+            errors.email = 'Email should include @ character!'
+        }
+        if (this.state.touched.password && password.length < 5) {
+            errors.password = 'Password should be 5 characters at least and above to be secure your account!'
+        }
+
+        return errors;
+    }
+
     render() {
+
+        const errors = this.validate(
+            this.state.firstname,
+            this.state.lastname,
+            this.state.email,
+            this.state.password
+        )
         return (
             <>
             <Navbar dark expand = "md">
@@ -127,17 +200,35 @@ class Header extends Component {
                                 type = "email" 
                                 id = "email" 
                                 name = "email"
+                                value = {this.state.email}
+                                onChange = {this.handleInputChange}
+                                onBlur = {this.handleBlur('email')}
+                                valid = {errors.email === ''}
+                                invalid = {errors.email !== ''}
+                                required
                                 innerRef = {(input) => this.email = input }
                             />
+                            <FormFeedback>
+                                {errors.email}
+                            </FormFeedback>
                         </FormGroup>
                         <FormGroup>
                             <Label for = "password">Password</Label>
                             <Input 
                                 type = "password" 
                                 id = "password" 
+                                required
+                                value = {this.state.password}
+                                onChange = {this.handleInputChange}
+                                onBlur = {this.handleBlur('password')}
+                                valid = {errors.password === ''}
+                                invalid = {errors.password !== ''}
                                 name = "password"
                                 innerRef = {input => this.password = input}
                             />
+                            <FormFeedback>
+                                {errors.password}
+                            </FormFeedback>
                         </FormGroup>
                         <FormGroup check>
                             <Label for = "checkbox">
@@ -182,36 +273,72 @@ class Header extends Component {
                         <Input 
                             type = "text" 
                             id = "firstname" 
+                            required
+                            value = {this.state.firstname}
+                            onChange = {this.handleInputChange}
+                            onBlur = {this.handleBlur('firstname')}
                             name = "firstname"
+                            valid = {errors.firstname === ''}
+                            invalid = {errors.firstname !== ''}
                             innerRef = {(input) => this.firstname = input }
                         />
+                        <FormFeedback>
+                            {errors.firstname}
+                        </FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label for = "lastname">Lastname</Label>
                         <Input 
                             type = "text" 
                             id = "lastname" 
+                            required
+                            value = {this.state.lastname}
+                            onChange = {this.handleInputChange}
+                            onBlur = {this.handleBlur('lastname')}
+                            valid = {errors.lastname === ''}
+                            invalid = {errors.lastname !== ''}
                             name = "lastname"
                             innerRef = {(input) => this.lastname = input }
                         />
+                        <FormFeedback>
+                            {errors.lastname}
+                        </FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label for = "email">Email</Label>
                         <Input 
                             type = "email" 
                             id = "email" 
+                            required
+                            value = {this.state.email}
+                            onChange = {this.handleInputChange}
+                            onBlur = {this.handleBlur}
+                            valid = {errors.email === ''}
+                            invalid = {errors.email !== ''}
                             name = "email"
                             innerRef = {(input) => this.email = input }
                         />
+                        <FormFeedback>
+                            {errors.email}
+                        </FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label for = "password">Password</Label>
                         <Input 
                             type = "password" 
                             id = "password" 
+                            required
+                            value = {this.state.password}
+                            onChange = {this.handleInputChange}
+                            onBlur = {this.handleBlur}
+                            valid = {errors.password === ''}
+                            invalid = {errors.password !== ''}
                             name = "password"
                             innerRef = {input => this.password = input}
                         />
+                        <FormFeedback>
+                            {errors.password}
+                        </FormFeedback>
                     </FormGroup>
                     <FormGroup className = "d-flex justify-content-between">
                         <Button 
