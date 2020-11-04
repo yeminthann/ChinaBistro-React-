@@ -158,7 +158,7 @@ class Header extends Component {
                             >
                                 Login
                             </Button>
-                            <p className = "text-info mt-2">
+                            <p className = "text-info pr-1 pl-1 m-0">
                                 {this.state.message}
                             </p>
                             <Button 
