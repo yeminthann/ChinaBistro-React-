@@ -19,7 +19,7 @@ function RenderCard({isLoading, item, errMsg}) {
         return (
             
             <FadeTransform
-            in transformProps = {{exitTransform: 'scale(0.5) TranslateY(-100%)'}}
+            in transformProps = {{exitTransform: 'scale(1) TranslateY(-100%)'}}
             >
             <Link to = {`/menu/${item.category}`} className = "card-link">
                 <CardGroup className = "m-2">
