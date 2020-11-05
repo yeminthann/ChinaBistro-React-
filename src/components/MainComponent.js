@@ -48,6 +48,10 @@ class Main extends Component {
 
                 chicken = {this.props.menus.menus.filter(item => item.category === 'chickens' && item.featured)[0]}
 
+                beef = {this.props.menus.menus.filter(item => item.category === 'beefs' && item.featured)[0]}
+
+                veal = {this.props.menus.menus.filter(item => item.category === 'veals' && item.featured)[0]}
+
                 isLoading = {this.props.menus.isLoading}
                 errMsg = {this.props.menus.errMsg}
                 />

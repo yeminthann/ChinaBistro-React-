@@ -21,6 +21,7 @@ function RenderCard({isLoading, item, errMsg}) {
             <FadeTransform
             in transformProps = {{exitTransform: 'scale(1) TranslateY(-100%)'}}
             >
+            <div className = "mr-5 ml-5 mb-4 m-md-3">
             <Link to = {`/menu/${item.category}`} className = "card-link">
                 <CardGroup className = "m-2">
                 <Card>
@@ -31,6 +32,7 @@ function RenderCard({isLoading, item, errMsg}) {
                 </Card>
                 </CardGroup>
             </Link>
+            </div>
             </FadeTransform>
         );
     }
@@ -76,6 +78,20 @@ function Menu (props) {
                 <div className = "col-12 col-md-4 mb-2">
                     <RenderCard 
                         item = {props.chicken}
+                        isLoading = {props.isLoading}
+                        errMsg = {props.errMsg}
+                    />
+                </div>
+                <div className = "col-12 col-md-4 mb-2">
+                    <RenderCard 
+                        item = {props.beef}
+                        isLoading = {props.isLoading}
+                        errMsg = {props.errMsg}
+                    />
+                </div>
+                <div className = "col-12 col-md-4 mb-2">
+                    <RenderCard 
+                        item = {props.veal}
                         isLoading = {props.isLoading}
                         errMsg = {props.errMsg}
                     />

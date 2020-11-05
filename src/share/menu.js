@@ -428,6 +428,217 @@ export const MENU = [
         price: '$10.95',
         featured: false,
         description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 43,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/F/F.jpg',
+        category: 'beefs',
+        label: 'F',
+        price: '$10.95',
+        featured: true,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 44,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/F/F1.jpg',
+        category: 'beefs',
+        label: 'F1',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 45,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/F/F2.jpg',
+        category: 'beefs',
+        label: 'F2',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 46,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/F/F3.jpg',
+        category: 'beefs',
+        label: 'F3',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 47,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/F/F4.jpg',
+        category: 'beefs',
+        label: 'F4',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    }
+    ,
+    {
+        id: 49,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/F/F5.jpg',
+        category: 'beefs',
+        label: 'F5',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 50,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/F/F6.jpg',
+        category: 'beefs',
+        label: 'F6',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 51,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/F/F7.jpg',
+        category: 'beefs',
+        label: 'F7',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 52,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/F/F8.jpg',
+        category: 'beefs',
+        label: 'F8',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 53,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/F/F9.jpg',
+        category: 'beefs',
+        label: 'F9',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 54,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/F/F10.jpg',
+        category: 'beefs',
+        label: 'F10',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 55,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/F/F11.jpg',
+        category: 'beefs',
+        label: 'F11',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 56,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/F/F12.jpg',
+        category: 'beefs',
+        label: 'F12',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 57,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/V/V.jpg',
+        category: 'veals',
+        label: 'V',
+        price: '$10.95',
+        featured: true,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 58,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/V/V1.jpg',
+        category: 'veals',
+        label: 'V1',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 59,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/V/V2.jpg',
+        category: 'veals',
+        label: 'V2',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 60,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/V/V3.jpg',
+        category: 'veals',
+        label: 'V3',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 61,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/V/V4.jpg',
+        category: 'veals',
+        label: 'V4',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 62,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/V/V5.jpg',
+        category: 'veals',
+        label: 'V5',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 63,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/V/V6.jpg',
+        category: 'veals',
+        label: 'V6',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+    },
+    {
+        id: 64,
+        name: 'Hunan Chicken',
+        image: '/assets/images/menu/V/V7.jpg',
+        category: 'veals',
+        label: 'V7',
+        price: '$10.95',
+        featured: false,
+        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
     }
 ];
 

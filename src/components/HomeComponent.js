@@ -27,20 +27,23 @@ class Home extends Component {
                         <FadeTransform
                             in transformProps = {{exitTransform: 'scale(0.5) TranslateX(-100%)'}}
                         >
+                        <div className = "mr-5 ml-5 mb-4 m-md-2">
                         <Link to = "/menu" className = "card-link">
-                            <Card>
+                            <Card >
                                 <CardImg src = "/assets/images/menu-tile.jpg" alt = "menu-tile" width = "100%"/>
                                 <CardHeader className = "text-center card-header">
                                         Menu
                                 </CardHeader>
                             </Card>
                         </Link>
+                        </div>
                         </FadeTransform>      
                     </div>
                     <div className = "col-12 col-sm-6 col-md-4 mb-2">
                     <FadeTransform
                             in transformProps = {{exitTransform: 'scale(0.5) TranslateY(-100%)'}}
                     >
+                    <div className = 'mr-5 ml-5 mb-4 m-md-2'>
                     <Link to = "/specials" className = "card-link">
                             <Card>
                                 <CardImg src = "/assets/images/specials-tile.jpg" alt = "menu-tile" width = "100%"/>
@@ -49,12 +52,14 @@ class Home extends Component {
                                 </CardHeader>
                             </Card>
                     </Link>
+                    </div>
                     </FadeTransform>
                     </div>
                     <div className = "col-12 col-sm-12 col-md-4 mb-1">
                     <FadeTransform
                             in transformProps = {{exitTransform: 'scale(0.5) TranslateX(100%)'}}
                     >
+                    <div className = "mr-5 ml-5 mb-4 m-md-2">
                     <Link to = "/menu" className = "card-link">
                             <Card>
                                 <CardImg src = "/assets/images/menu-tile.jpg" alt = "menu-tile" width = "100%"/>
@@ -63,6 +68,7 @@ class Home extends Component {
                                 </CardHeader>
                             </Card>
                     </Link>
+                    </div>
                     </FadeTransform>
                     </div>
                 </div>

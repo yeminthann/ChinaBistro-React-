@@ -30,7 +30,7 @@ function RenderDishDetail ({item}) {
                 >
                     <Media heading className = "text-center text-md-left">{item.name}</Media>
                     <p className = "text-center text-md-left font-weight-bold">{item.price}</p>
-                    <p className = "text-justify font-italic">{item.description}</p>
+                    <p className = "text-justify text-center text-md-left font-italic">{item.description}</p>
                 </FadeTransform>
                 </div>
             </div>
@@ -54,7 +54,7 @@ const DishDetail = (props) => {
         const itemDetail = props.item.map(item => {
 
             return(
-                <div key = {item.id}>
+                <div key = {item.id} className = "mr-5 ml-5 mb-4 m-md-3">
 
                         <RenderDishDetail item = {item} />
                 </div>
@@ -66,31 +66,54 @@ const DishDetail = (props) => {
 
         const specificItems = props.specificItems;
         const menuLength = specificItems.length-1;
+        console.log(menuLength);
 
         const labelAry = item.label.split('');
-        if(Number(labelAry[1]) < (menuLength) && Number(labelAry[1])>1) {
+        
+        console.log(Number(labelAry[1]+ labelAry[2]));
+        const len3 = Number(labelAry[1]+ labelAry[2]);
+        if(labelAry.length === 3 ) {
+            if(len3 < (menuLength)) {
 
-            const nextLabel = Number(labelAry[1]) + 1;
-            var nextItem = labelAry[0] + nextLabel;
-
-            const prevLabel = Number(labelAry[1]) - 1;
-            var prevItem = labelAry[0] + prevLabel;
+                const nextLabel = len3 + 1;
+                var nextItem = labelAry[0] + nextLabel;
+    
+                const prevLabel = len3 - 1;
+                var prevItem = labelAry[0] + prevLabel;
+            }
+            else if(len3 === menuLength) {
+                const nextLabel = Number(len3);
+                nextItem = labelAry[0] + nextLabel;
+    
+                const prevLabel = len3 - 1;
+                prevItem = labelAry[0] + prevLabel;
+            }         
         }
-        else if(Number(labelAry[1]) === menuLength) {
-            const nextLabel = Number(labelAry[1]);
-            nextItem = labelAry[0] + nextLabel;
-
+        else {
+            if(Number(labelAry[1]) < (menuLength) && Number(labelAry[1])>1) {
+                
+                const nextLabel = Number(labelAry[1]) + 1;
+                var nextItem = labelAry[0] + nextLabel;
+                
+                const prevLabel = Number(labelAry[1]) - 1;
+                var prevItem = labelAry[0] + prevLabel;
+            }
+            else if(Number(labelAry[1]) === menuLength) {
+                const nextLabel = Number(labelAry[1]);
+                nextItem = labelAry[0] + nextLabel;
+                
             const prevLabel = Number(labelAry[1]) - 1;
             prevItem = labelAry[0] + prevLabel;
         }
         else if (Number(labelAry[1]) === 1) {
             const nextLabel = Number(labelAry[1]) + 1;
             nextItem = labelAry[0] + nextLabel;
-
+            
             const prevLabel = Number(labelAry[1]);
             prevItem = labelAry[0] + prevLabel;
         }
-
+        
+    }
         return (
             <div className = "container">
             <Breadcrumb className = "font-weight-bold sticky-top">
@@ -107,11 +130,11 @@ const DishDetail = (props) => {
             </Breadcrumb>
             {itemDetail}
             <div className = "container">
-                <div className = "d-flex justify-content-between m-1 mt-4">
-                    <Link  to = {`/menu/${item.category}/${prevItem}`} className = "bg-dark prev-btn p-3 pr-4 pl-4 text-decoration-none">
+                <div className = "d-flex justify-content-between mr-5 ml-5 mt-4">
+                    <Link  to = {`/menu/${item.category}/${prevItem}`} className = "prev-btn p-2 pr-4 pl-4 text-decoration-none">
                         Prev
                     </Link>
-                    <Link  to = {`/menu/${item.category}/${nextItem}`} className = "bg-dark next-btn p-3 pr-4 pl-4 text-decoration-none">
+                    <Link  to = {`/menu/${item.category}/${nextItem}`} className = "next-btn p-2 pr-4 pl-4 text-decoration-none">
                         Next
                     </Link>
                 </div>

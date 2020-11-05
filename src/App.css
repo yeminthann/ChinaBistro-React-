@@ -55,7 +55,9 @@ body {
   font-size: large;
 }
 .next-btn, .prev-btn {
-  border-radius: 20px;
+  border-radius: 10px;
+  color: aqua;
+  background-color: rgb(112, 109, 109);
 }
 .footer {
   background-color: rgb(70, 67, 67);

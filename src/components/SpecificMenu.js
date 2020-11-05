@@ -38,9 +38,11 @@ const SpecificMenu = (props) => {
                     <FadeTransform
                         in transformProps = {{exitTransform: 'scale(1) TranslateY(-100%)'}}
                     >
-                    <RenderSpecificMenu 
-                        item = {item}
+                    <div className = "mr-5 ml-5 mb-4 m-md-3">
+                        <RenderSpecificMenu 
+                            item = {item}
                         />
+                    </div>
                     </FadeTransform>
                 </div>
             );
