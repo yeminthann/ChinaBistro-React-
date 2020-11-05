@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem, Card, CardGroup, CardImg, CardImgOverlay, Media } from 'reactstrap';
 import { Loading } from './LoadingComponent';
 import { FadeTransform } from 'react-animation-components';
@@ -61,7 +61,36 @@ const DishDetail = (props) => {
             );
         });
 
+
         const item = props.item.map(item => item)[0];
+
+        const specificItems = props.specificItems;
+        const menuLength = specificItems.length-1;
+
+        const labelAry = item.label.split('');
+        if(Number(labelAry[1]) < (menuLength) && Number(labelAry[1])>1) {
+
+            const nextLabel = Number(labelAry[1]) + 1;
+            var nextItem = labelAry[0] + nextLabel;
+
+            const prevLabel = Number(labelAry[1]) - 1;
+            var prevItem = labelAry[0] + prevLabel;
+        }
+        else if(Number(labelAry[1]) === menuLength) {
+            const nextLabel = Number(labelAry[1]);
+            nextItem = labelAry[0] + nextLabel;
+
+            const prevLabel = Number(labelAry[1]) - 1;
+            prevItem = labelAry[0] + prevLabel;
+        }
+        else if (Number(labelAry[1]) === 1) {
+            const nextLabel = Number(labelAry[1]) + 1;
+            nextItem = labelAry[0] + nextLabel;
+
+            const prevLabel = Number(labelAry[1]);
+            prevItem = labelAry[0] + prevLabel;
+        }
+
         return (
             <div className = "container">
             <Breadcrumb className = "font-weight-bold sticky-top">
@@ -77,6 +106,16 @@ const DishDetail = (props) => {
             <BreadcrumbItem>{item.label}</BreadcrumbItem>
             </Breadcrumb>
             {itemDetail}
+            <div className = "container">
+                <div className = "d-flex justify-content-between m-1 mt-4">
+                    <Link  to = {`/menu/${item.category}/${prevItem}`} className = "bg-dark prev-btn p-3 pr-4 pl-4 text-decoration-none">
+                        Prev
+                    </Link>
+                    <Link  to = {`/menu/${item.category}/${nextItem}`} className = "bg-dark next-btn p-3 pr-4 pl-4 text-decoration-none">
+                        Next
+                    </Link>
+                </div>
+            </div>
             </div>
         );
     }

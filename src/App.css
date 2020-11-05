@@ -54,6 +54,9 @@ body {
 .breadcrumb-item:hover {
   font-size: large;
 }
+.next-btn, .prev-btn {
+  border-radius: 20px;
+}
 .footer {
   background-color: rgb(70, 67, 67);
   color: wheat;

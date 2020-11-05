@@ -303,7 +303,7 @@ export const MENU = [
         id: 30,
         name: 'Happy Family',
         image: '/assets/images/menu/SP/SP5.jpg',
-        category: 'appetizers',
+        category: 'specials',
         label: 'SP5',
         price: '$10.95',
         featured: false,

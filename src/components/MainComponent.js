@@ -83,6 +83,9 @@ class Main extends Component {
                 item = {this.props.menus.menus.filter(item => {
                     return ((item.category === match.params.specific_menu) && (item.label === match.params.label && !item.featured))
                  })}
+
+                 specificItems = {this.props.menus.menus.filter(item => item.category === match.params.specific_menu)}
+
                  isLoading = {this.props.menus.isLoading}
                  errMsg = {this.props.menus.errMsg}
                 />
@@ -94,11 +97,11 @@ class Main extends Component {
                 <Header/>
                 <ScrollToTop />
                 <Switch>
+                    <Route path = "/menu/:specific_menu/:label" component = {DishDetailPage} />
                     <Route  path = "/home" component = {Home} />
                     <Route exact path = "/menu" component = {MenuPage} />
                     <Route path = "/specials" component = {SpecialMenuPage} />
                     <Route exact path = "/menu/:specific_menu" component = {SpecificMenuPage} />
-                    <Route path = "/menu/:specific_menu/:label" component = {DishDetailPage} />
                     <Route path = "/contact" component = {Contact} />
                     <Route path = "/about" component = {About} />
                     <Route path = "/awards" component = {Award} />
