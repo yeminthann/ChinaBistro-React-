@@ -441,204 +441,204 @@ export const MENU = [
     },
     {
         id: 44,
-        name: 'Hunan Chicken',
+        name: 'Beef Broccoli',
         image: '/assets/images/menu/F/F1.jpg',
         category: 'beefs',
         label: 'F1',
-        price: '$10.95',
+        price: '$13.95 pint $17.95 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'sliced beef sauteed with broccoli in brown sauce'
     },
     {
         id: 45,
-        name: 'Hunan Chicken',
+        name: 'Hunan Beef',
         image: '/assets/images/menu/F/F2.jpg',
         category: 'beefs',
         label: 'F2',
-        price: '$10.95',
+        price: '$13.95 pint $17.95 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'beef sauteed with broccoli, mushrooms, and carrots in spicy Hunan sauce'
     },
     {
         id: 46,
-        name: 'Hunan Chicken',
+        name: 'Szechuan Beef',
         image: '/assets/images/menu/F/F3.jpg',
         category: 'beefs',
         label: 'F3',
-        price: '$10.95',
+        price: '$13.95 pint $17.95 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'beef sauteed with carrots and celery, in a spicy Szechuan sauce'
     },
     {
         id: 47,
-        name: 'Hunan Chicken',
+        name: 'Beef with Mixed Vegetables',
         image: '/assets/images/menu/F/F4.jpg',
         category: 'beefs',
         label: 'F4',
-        price: '$10.95',
+        price: '$13.95 pint $17.95 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'sliced beef sauteed with broccoli, carrots, snow peas, mushrooms and baby corns.'
     }
     ,
     {
         id: 49,
-        name: 'Hunan Chicken',
+        name: 'Beef with Garlic Sauce',
         image: '/assets/images/menu/F/F5.jpg',
         category: 'beefs',
         label: 'F5',
-        price: '$10.95',
+        price: '$13.95 pint $17.95 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'sliced beef sauteed in garlic sauce'
     },
     {
         id: 50,
-        name: 'Hunan Chicken',
+        name: 'Beef with Eggplant in Garlic Sauce',
         image: '/assets/images/menu/F/F6.jpg',
         category: 'beefs',
         label: 'F6',
-        price: '$10.95',
+        price: '$13.95 pint $17.95 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'sliced beef sauteed with eggplant in garlic sauce'
     },
     {
         id: 51,
-        name: 'Hunan Chicken',
+        name: 'Beef with Snow Peas',
         image: '/assets/images/menu/F/F7.jpg',
         category: 'beefs',
         label: 'F7',
-        price: '$10.95',
+        price: '$13.95 pint $17.95 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'sliced beef sauteed with snow peas in brown sauce'
     },
     {
         id: 52,
-        name: 'Hunan Chicken',
+        name: 'Beef with Green Pepper',
         image: '/assets/images/menu/F/F8.jpg',
         category: 'beefs',
         label: 'F8',
-        price: '$10.95',
+        price: '$13.95 pint $17.95 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'sliced beef sauteed with green peppers and onions in brown sauce'
     },
     {
         id: 53,
-        name: 'Hunan Chicken',
+        name: 'Kung Pao Beef',
         image: '/assets/images/menu/F/F9.jpg',
         category: 'beefs',
         label: 'F9',
-        price: '$10.95',
+        price: '$13.95 pint $17.95 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'sliced beef sauteed with peanuts and celery in delicious Kung Pao sauce'
     },
     {
         id: 54,
-        name: 'Hunan Chicken',
+        name: 'Mongolian Beef',
         image: '/assets/images/menu/F/F10.jpg',
         category: 'beefs',
         label: 'F10',
-        price: '$10.95',
+        price: '$13.95 pint $17.95 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'sliced beef sauteed with bamboo shoots, onions, and green onions in chef\'s sauce'
     },
     {
         id: 55,
-        name: 'Hunan Chicken',
+        name: 'Moo Shu Beef',
         image: '/assets/images/menu/F/F11.jpg',
         category: 'beefs',
         label: 'F11',
-        price: '$10.95',
+        price: '$13.95 pint $17.95 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'sliced beef sauteed with shredded cabbage, mushrooms and eggs, then wrapped with pancake and delicious plum sauce'
     },
     {
         id: 56,
-        name: 'Hunan Chicken',
+        name: 'Beef with String Bean',
         image: '/assets/images/menu/F/F12.jpg',
         category: 'beefs',
         label: 'F12',
-        price: '$10.95',
+        price: '$13.95 pint $17.95 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'sliced beef sauteed with string beans and onions'
     },
     {
         id: 57,
-        name: 'Hunan Chicken',
+        name: '',
         image: '/assets/images/menu/V/V.jpg',
         category: 'veals',
         label: 'V',
         price: '$10.95',
         featured: true,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: ''
     },
     {
         id: 58,
-        name: 'Hunan Chicken',
+        name: 'Hunan Veal',
         image: '/assets/images/menu/V/V1.jpg',
         category: 'veals',
         label: 'V1',
-        price: '$10.95',
+        price: '$15.45 pint $21.45 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'veal sauteed with broccoli, mushrooms, and carrots in spicy Hunan sauce'
     },
     {
         id: 59,
-        name: 'Hunan Chicken',
+        name: 'Veal with Mixed Vegetables',
         image: '/assets/images/menu/V/V2.jpg',
         category: 'veals',
         label: 'V2',
-        price: '$10.95',
+        price: '$15.45 pint $21.45 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'sliced veal sauteed with carrots, broccoli, snow peas, string beans, water chestnuts, and mushrooms in brown sauce'
     },
     {
         id: 60,
-        name: 'Hunan Chicken',
+        name: 'Veal with Garlic Sauce',
         image: '/assets/images/menu/V/V3.jpg',
         category: 'veals',
         label: 'V3',
-        price: '$10.95',
+        price: '$15.45 pint $21.45 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'sliced veal sauteed with mushrooms, string beans, and water chestnuts in garlic sauce'
     },
     {
         id: 61,
-        name: 'Hunan Chicken',
+        name: 'Kung Pao Veal',
         image: '/assets/images/menu/V/V4.jpg',
         category: 'veals',
         label: 'V4',
-        price: '$10.95',
+        price: '$15.45 pint $21.45 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'sliced veal sauteed with peanuts and celery in delicious Kung Pao sauce'
     },
     {
         id: 62,
-        name: 'Hunan Chicken',
+        name: 'Mongolian Veal',
         image: '/assets/images/menu/V/V5.jpg',
         category: 'veals',
         label: 'V5',
-        price: '$10.95',
+        price: '$15.45 pint $21.45 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'veal sauteed with onions, green onions, and bamboo shoots in chef\'s sauce'
     },
     {
         id: 63,
-        name: 'Hunan Chicken',
+        name: 'Veal with Green Peppers',
         image: '/assets/images/menu/V/V6.jpg',
         category: 'veals',
         label: 'V6',
-        price: '$10.95',
+        price: '$15.45 pint $21.45 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'sliced veal sauteed with onions and green peppers in brown sauce'
     },
     {
         id: 64,
-        name: 'Hunan Chicken',
+        name: 'Szechuan Veal',
         image: '/assets/images/menu/V/V7.jpg',
         category: 'veals',
         label: 'V7',
-        price: '$10.95',
+        price: '$15.45 pint $21.45 large',
         featured: false,
-        description: 'white meat chicken sauteed with broccoli, mushrooms, and baby corn in Hunan sauce'
+        description: 'veal sauteed with carrots, celery, and bean sprouts in Szechuan sauce'
     }
 ];
 

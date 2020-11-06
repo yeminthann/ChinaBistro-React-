@@ -5,6 +5,7 @@ import { FadeTransform } from 'react-animation-components';
 class Home extends Component {
     render() {
         return (
+            <div style = {{background: 'rgb(172, 164, 164)'}}>
             <div className = "container">
                 <Jumbotron>
                     <div className = "row">
@@ -23,7 +24,7 @@ class Home extends Component {
                         </div>
                 </Jumbotron>
                 <div className = "row">
-                    <div className = "col-12 col-sm-6 col-md-4 mb-2">
+                    <div className = "col-12 col-sm-6 col-md-4 mb-5">
                         <FadeTransform
                             in transformProps = {{exitTransform: 'scale(0.5) TranslateX(-100%)'}}
                         >
@@ -39,7 +40,7 @@ class Home extends Component {
                         </div>
                         </FadeTransform>      
                     </div>
-                    <div className = "col-12 col-sm-6 col-md-4 mb-2">
+                    <div className = "col-12 col-sm-6 col-md-4 mb-5">
                     <FadeTransform
                             in transformProps = {{exitTransform: 'scale(0.5) TranslateY(-100%)'}}
                     >
@@ -55,7 +56,7 @@ class Home extends Component {
                     </div>
                     </FadeTransform>
                     </div>
-                    <div className = "col-12 col-sm-12 col-md-4 mb-1">
+                    <div className = "col-12 col-sm-12 col-md-4 mb-5">
                     <FadeTransform
                             in transformProps = {{exitTransform: 'scale(0.5) TranslateX(100%)'}}
                     >
@@ -72,6 +73,7 @@ class Home extends Component {
                     </FadeTransform>
                     </div>
                 </div>
+            </div>
             </div>
         );
     }

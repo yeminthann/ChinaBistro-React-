@@ -1,5 +1,5 @@
 body {
-  background: rgb(228, 221, 221);
+  background: linear-gradient(rgb(131, 57, 57),rgb(99, 167, 99),rgb(161, 140, 44), rgb(194, 194, 120), rgb(62, 62, 119));
   margin: 0;
   padding: 0;
 }
@@ -9,6 +9,9 @@ body {
 }
 .hr {
   text-shadow: 3px 2px 3px #000;
+}
+.jumbotron {
+  background: rgb(172, 164, 164);
 }
 .jum-header {
   color: rgb(24, 102, 61);
