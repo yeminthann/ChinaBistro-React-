@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input, FormFeedback } from 'reactstrap';
 import {  NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 class Header extends Component {
     constructor (props) {
@@ -139,8 +140,9 @@ class Header extends Component {
             <Navbar dark expand = "md">
                 <div className = "container">
                     <NavbarBrand>
-                        <img className = "d-none d-md-inline" src = "/assets/images/logo.png" width = "80" height = "80" alt = "logo.png"/>
-                        <img className = "d-md-none d-inline" src = "/assets/images/logo_small.png" width = "80" height = "80" alt = "logo.png"/>
+                        <Link to = "/home">
+                        <img src = "/assets/images/logo.png" width = "80" height = "80" alt = "logo.png"/>
+                        </Link>
                         <p className = "d-none d-md-block"> <img src = "/assets/images/star.png" alt = "kosher"/>Kohser Certified</p>
                     </NavbarBrand>
                     <Nav>

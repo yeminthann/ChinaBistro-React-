@@ -1,11 +1,11 @@
 body {
-  background: linear-gradient(rgb(131, 57, 57),rgb(99, 167, 99),rgb(161, 140, 44), rgb(194, 194, 120), rgb(62, 62, 119));
+  background: linear-gradient(rgb(131, 57, 57),rgb(135, 184, 135),rgb(158, 147, 100), rgb(74, 135, 139), rgb(190, 190, 201));
   margin: 0;
   padding: 0;
 }
 
 .navbar-dark {
-  background-color: rgb(99, 99, 47);
+  background-color: rgb(148, 148, 56);
 }
 .hr {
   text-shadow: 3px 2px 3px #000;

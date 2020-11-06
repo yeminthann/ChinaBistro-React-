@@ -102,14 +102,14 @@ class Main extends Component {
                 <ScrollToTop />
                 <Switch>
                     <Route path = "/menu/:specific_menu/:label" component = {DishDetailPage} />
-                    <Route  path = "/home" component = {Home} style = {{background: 'white'}}/>
+                    <Route  path = "/home" component = {Home} />
                     <Route exact path = "/menu" component = {MenuPage} />
                     <Route path = "/specials" component = {SpecialMenuPage} />
                     <Route exact path = "/menu/:specific_menu" component = {SpecificMenuPage} />
                     <Route path = "/contact" component = {Contact} />
                     <Route path = "/about" component = {About} />
                     <Route path = "/awards" component = {Award} />
-                    <Redirect to = "/home" style = {{background: 'white'}}/>
+                    <Redirect to = "/home" />
                 </Switch>
                 <Footer />
             </div>

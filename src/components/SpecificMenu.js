@@ -63,7 +63,7 @@ const SpecificMenu = (props) => {
                 </Breadcrumb>
                 <div className = "row">
                     <div className = "col-12 text-uppercase text-center">
-                        <h3>{breadcrumbName} MENU</h3> <hr/>
+                        <h3>{breadcrumbName} MENU</h3> <hr className = "bg-warning"/>
                     </div>
                 </div>
                 <div className = "row">

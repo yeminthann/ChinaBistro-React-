@@ -51,7 +51,7 @@ function Menu (props) {
                     </BreadcrumbItem>
                 </Breadcrumb>
                 <div className = "row">
-                    <h2 className = "col-12 text-center fon-weight-bold p-3">MENU CATEGORIES <hr className = "bg-info" /></h2>
+                    <h2 className = "col-12 text-center fon-weight-bold p-3">MENU CATEGORIES <hr className = "bg-warning" /></h2>
                 </div>
                 <div className = "row">
                     <div className = "col-12 col-md-4 mb-2">

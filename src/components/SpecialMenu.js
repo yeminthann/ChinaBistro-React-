@@ -48,7 +48,7 @@ const SpecialMenu = (props) => {
                 <Fade in>
                     <div key = {item.id}>
                         <RenderSpecialMenu item = {item} />
-                        <hr className = "bg-info"/>
+                        <hr className = "bg-default"/>
                     </div>
                 </Fade>
             );

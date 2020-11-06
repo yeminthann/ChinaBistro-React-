@@ -130,7 +130,7 @@ const DishDetail = (props) => {
             </Breadcrumb>
             {itemDetail}
             <div className = "container">
-                <div className = "d-flex justify-content-between mr-5 ml-5 mt-4">
+                <div className = "d-flex justify-content-between mr-5 ml-5 mt-4 mb-4">
                     <Link  to = {`/menu/${item.category}/${prevItem}`} className = "prev-btn p-2 pr-4 pl-4 text-decoration-none">
                         Prev
                     </Link>
