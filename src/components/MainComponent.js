@@ -6,7 +6,7 @@ import Footer from './FooterComponent';
 import SpecificMenu from './SpecificMenu';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'
-import { fetchMenu } from '../redux/ActionCreaters';
+import { fetchMenu, addComment } from '../redux/ActionCreaters';
 import DishDetail from './DishDetail';
 import Contact from './ContactComponent';
 import About from './AboutComponent';
@@ -25,13 +25,17 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     fetchMenu: () => {dispatch(fetchMenu())},
-    resetForm: () => {dispatch(actions.reset('reset'))}
+    resetForm: () => {dispatch(actions.reset('reset'))},
+    addComment: (label, rating, comment, author) => {
+        dispatch(addComment(label, rating, comment, author))
+    }
 });
 
 class Main extends Component {
     
     componentDidMount() {
         this.props.fetchMenu();
+        this.props.addComment();
     }
 
     render() {
@@ -94,6 +98,8 @@ class Main extends Component {
 
                  comments = {this.props.comments.filter(comment => comment.label === (match.params.label) )}
 
+                 addComment = {this.props.addComment}
+
                  isLoading = {this.props.menus.isLoading}
                  errMsg = {this.props.menus.errMsg}
                 />
@@ -101,8 +107,8 @@ class Main extends Component {
         };
 
         return (
-            <div>
-                <Header/>
+            <>
+            <Header/>
                 <ScrollToTop />
                 <Switch>
                     <Route path = "/menu/:specific_menu/:label" component = {DishDetailPage} />
@@ -117,7 +123,7 @@ class Main extends Component {
                     <Redirect to = "/home" />
                 </Switch>
                 <Footer />
-            </div>
+            </>
         );
     };
 }

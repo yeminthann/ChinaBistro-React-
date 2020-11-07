@@ -22,4 +22,14 @@ export const menuFailed = (errMsg) => ({
     payload: errMsg
 });
 
+export const addComment = (label, rating, comment, author) => ({
+    type: ActionTypes.ADD_COMMENT,
+    payload: {
+        label,
+        rating,
+        comment,
+        author
+    }
+});
+
 // ===> to reducers function(lunch.js)

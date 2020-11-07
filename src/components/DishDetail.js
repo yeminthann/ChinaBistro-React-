@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Breadcrumb, BreadcrumbItem, Card, CardGroup, CardImg, CardImgOverlay, Media } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Card, CardGroup, CardImg, CardImgOverlay, Label, Media, Modal, ModalBody, ModalHeader, Row, Col, Button } from 'reactstrap';
 import { Loading } from './LoadingComponent';
-import { FadeTransform } from 'react-animation-components';
+import { FadeTransform, Stagger, Fade } from 'react-animation-components';
+import { Form, Control } from 'react-redux-form';
 
 function RenderDishDetail ({item}) {
     return(
@@ -55,19 +56,59 @@ function RenderComments ({comments}) {
 
                 return (  
                         <li key = {comment.id}>
-                            <p>{comment.comment}</p>
-                            <p>--<i>{comment.author}</i>, {date}, {comment.label}</p>
+                            <div className = "p-3 comment-bg">
+                            <p><b>{comment.comment}</b></p>
+                            <p>Rating: {comment.rating}</p>
+                            <p>--<i>{comment.author}</i>, {date}</p>
+                            </div>
                             <hr className = "bg-muted"/>
                         </li>
                 );
         })
         return (
-            <ul className = "list-unstyled">
+            <Fade in>
+            <ul className = "list-unstyled" >
             {commentsList}
             </ul>
+            </Fade>
     );
 }
 } 
+
+class PostComment extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isModalOpen: false,
+        };
+        this.toggleModal = this.toggleModal.bind(this);
+    }
+    toggleModal() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        })
+    }
+
+    render() {
+        return (
+        //comment modal
+        <>
+        <Modal isOpen = {this.state.isModalOpen} toggle = {this.toggleModal}>
+            <ModalHeader>Submit Comment</ModalHeader>
+            <ModalBody>
+                form here
+            </ModalBody>
+        </Modal>
+
+        <Button type = 'button' className = "bg-primary" onClick = {this.toggleModal}>
+            Submit Comments
+        </Button>
+        </>
+        );
+    }
+}
+
+
 
 const DishDetail = (props) => {
 
@@ -164,10 +205,12 @@ const DishDetail = (props) => {
                 <div className = "col-12">
                 <div className = " m-4 text-md-left text-center">
                     <h4>Comments</h4>
+                        <Stagger in>
                         <RenderComments comments = {props.comments} />
+                        <PostComment />
+                        </Stagger>
                     </div>
                 </div>
-                {/* <div className = "container"> */}
                     <div className = "d-flex justify-content-between m-4">
                         <Link  to = {`/menu/${item.category}/${prevItem}`} className = "prev-btn text-decoration-none p-2 pr-4 pl-4 ">
                             Prev
@@ -176,7 +219,6 @@ const DishDetail = (props) => {
                             Next
                         </Link>
                     </div>
-                {/* </div> */}
             </div>
         );
     }

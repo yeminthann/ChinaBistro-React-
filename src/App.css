@@ -62,6 +62,11 @@ body {
   color: aqua;
   background-color: rgb(112, 109, 109);
 }
+.comment-bg {
+  background: rgb(153, 146, 146);
+  box-shadow: 1px 1px 1px 1px #b3c2c4;
+  border-radius: 20px;
+}
 .footer {
   background-color: rgb(70, 67, 67);
   color: wheat;

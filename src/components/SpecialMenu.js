@@ -8,7 +8,7 @@ function RenderSpecialMenu ({item}) {
     return(
         <div className = "container">
             <div className = "row">
-                <div className = "col-12 col-md-5 m-1">
+                <div className = "col-11 col-md-5 m-1">
                     <CardGroup>
                         <Card>
                             <CardImg src = {item.image} alt = {item.name} width = "100%"/>
@@ -20,7 +20,7 @@ function RenderSpecialMenu ({item}) {
                         </Card>
                     </CardGroup>
                 </div>
-                <div className = "col-12 col-md-5 m-1">
+                <div className = "col-11 col-md-5 m-1">
                         <Media heading className = "text-center text-md-left">{item.name}</Media>
                         <p className = "text-center text-md-left font-weight-bold">{item.price}</p>
                         <p className = "text-justify font-italic">{item.description}</p>
