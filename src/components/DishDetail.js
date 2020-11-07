@@ -36,7 +36,38 @@ function RenderDishDetail ({item}) {
             </div>
         </div>
     );
+};
+
+function RenderComments ({comments}) {
+    console.log(comments.length);
+    if(comments.length === 0) {
+        return (
+                <div><i>no comments yet</i></div>
+        );
+    }
+    if(comments.length > 0) {
+        const commentsList = comments.map(comment => {
+            const date = new Intl.DateTimeFormat('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: '2-digit'
+            }).format(new Date(comment.date));
+
+                return (  
+                        <li key = {comment.id}>
+                            <p>{comment.comment}</p>
+                            <p>--<i>{comment.author}</i>, {date}, {comment.label}</p>
+                            <hr className = "bg-muted"/>
+                        </li>
+                );
+        })
+        return (
+            <ul className = "list-unstyled">
+            {commentsList}
+            </ul>
+    );
 }
+} 
 
 const DishDetail = (props) => {
 
@@ -116,29 +147,36 @@ const DishDetail = (props) => {
     }
         return (
             <div className = "container">
-            <Breadcrumb className = "font-weight-bold sticky-top">
-            <BreadcrumbItem>
-                <Link to = "/home">Home</Link>
-            </BreadcrumbItem>
-            <BreadcrumbItem>
-                <Link to = "/menu">Menu</Link>
-            </BreadcrumbItem>
-            <BreadcrumbItem className = "text-capitalize">
-                <Link to = {`/menu/${item.category}`}>{item.category}</Link>
-            </BreadcrumbItem>
-            <BreadcrumbItem>{item.label}</BreadcrumbItem>
-            </Breadcrumb>
-            {itemDetail}
-            <div className = "container">
-                <div className = "d-flex justify-content-between mr-5 ml-5 mt-4 mb-4">
-                    <Link  to = {`/menu/${item.category}/${prevItem}`} className = "prev-btn p-2 pr-4 pl-4 text-decoration-none">
-                        Prev
-                    </Link>
-                    <Link  to = {`/menu/${item.category}/${nextItem}`} className = "next-btn p-2 pr-4 pl-4 text-decoration-none">
-                        Next
-                    </Link>
+                <Breadcrumb className = "font-weight-bold sticky-top">
+                <BreadcrumbItem>
+                    <Link to = "/home">Home</Link>
+                </BreadcrumbItem>
+                <BreadcrumbItem>
+                    <Link to = "/menu">Menu</Link>
+                </BreadcrumbItem>
+                <BreadcrumbItem className = "text-capitalize">
+                    <Link to = {`/menu/${item.category}`}>{item.category}</Link>
+                </BreadcrumbItem>
+                <BreadcrumbItem>{item.label}</BreadcrumbItem>
+                </Breadcrumb>
+                {itemDetail}
+                <hr className = "bg-info" />
+                <div className = "col-12">
+                <div className = " m-4 text-md-left text-center">
+                    <h4>Comments</h4>
+                        <RenderComments comments = {props.comments} />
+                    </div>
                 </div>
-            </div>
+                {/* <div className = "container"> */}
+                    <div className = "d-flex justify-content-between m-4">
+                        <Link  to = {`/menu/${item.category}/${prevItem}`} className = "prev-btn text-decoration-none p-2 pr-4 pl-4 ">
+                            Prev
+                        </Link>
+                        <Link  to = {`/menu/${item.category}/${nextItem}`} className = "next-btn p-2 pr-4 pl-4 text-decoration-none">
+                            Next
+                        </Link>
+                    </div>
+                {/* </div> */}
             </div>
         );
     }

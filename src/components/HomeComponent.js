@@ -65,7 +65,7 @@ class Home extends Component {
                             <Card>
                                 <CardImg src = "/assets/images/menu-tile.jpg" alt = "menu-tile" width = "100%"/>
                                 <CardHeader className = "text-center card-header">
-                                        Menu
+                                        Map
                                 </CardHeader>
                             </Card>
                     </Link>

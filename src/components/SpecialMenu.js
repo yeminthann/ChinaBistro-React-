@@ -68,7 +68,7 @@ const SpecialMenu = (props) => {
                 CHIEF'S RECOMMENDATION MENU <hr className = "bg-warning"/>
             </h3>
             <Media list>
-                <Stagger in>
+                <Stagger in key = {item.id}>
                     {specialItems}
                 </Stagger>
             </Media>
