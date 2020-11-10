@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Breadcrumb, BreadcrumbItem, Card, CardGroup, CardImg, CardImgOverlay, Label, Media, Modal, ModalBody, ModalHeader, Row, Col, Button } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Card, CardGroup, CardImg, CardImgOverlay, Label, Media, Modal, ModalBody, ModalHeader, Form, Button, FormGroup, Input } from 'reactstrap';
 import { Loading } from './LoadingComponent';
 import { FadeTransform, Stagger, Fade } from 'react-animation-components';
-import { Form, Control } from 'react-redux-form';
 
 function RenderDishDetail ({item}) {
     return(
@@ -80,13 +79,35 @@ class PostComment extends Component {
         super(props);
         this.state = {
             isModalOpen: false,
+            username: '',
+            email: '',
+            comment: ''
+
         };
         this.toggleModal = this.toggleModal.bind(this);
+        this.handleonChange = this.handleonChange.bind(this);
     }
     toggleModal() {
         this.setState({
             isModalOpen: !this.state.isModalOpen
         })
+    }
+
+    handleonChange (e) {
+        const target = e.target;
+        const value = target.value;
+        const name = target.name;
+        this.setState({
+            [name]: value
+        });
+    }
+
+    handleSubmit = (e) => {
+        alert(`Thanks a lot ${this.state.username} for submitting: \n
+        Email: ${this.state.email} \n
+        Comment: ${this.state.comment}`);
+        this.toggleModal();
+        e.preventDefault();
     }
 
     render() {
@@ -96,7 +117,23 @@ class PostComment extends Component {
         <Modal isOpen = {this.state.isModalOpen} toggle = {this.toggleModal}>
             <ModalHeader>Submit Comment</ModalHeader>
             <ModalBody>
-                form here
+                <Form onSubmit = {this.handleSubmit}>
+                    <FormGroup>
+                        <Label for = "username">Username</Label>
+                        <Input id = "username" name = "username" placeholder = "username" required onChange = {this.handleonChange} value = {this.state.username}/>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for = "email">Email</Label>
+                        <Input id = "email" name = "email" placeholder = "email" required onChange = {this.handleonChange} value = {this.state.email}/>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for = "comment">Comment</Label>
+                        <Input type = "textarea" required onChange = {this.handleonChange} name = "comment" value = {this.state.comment}/>
+                    </FormGroup>
+                    <FormGroup>
+                        <Button>Submit</Button>
+                    </FormGroup>
+                </Form>
             </ModalBody>
         </Modal>
 

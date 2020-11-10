@@ -108,7 +108,7 @@ class Main extends Component {
 
         return (
             <>
-            <Header/>
+                <Header/>
                 <ScrollToTop />
                 <Switch>
                     <Route path = "/menu/:specific_menu/:label" component = {DishDetailPage} />
