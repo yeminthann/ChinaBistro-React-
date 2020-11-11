@@ -63,8 +63,8 @@ body {
   background-color: rgb(112, 109, 109);
 }
 .comment-bg {
-  background: rgb(153, 146, 146);
-  box-shadow: 1px 1px 1px 1px #b3c2c4;
+  /* background: rgb(238, 199, 199); */
+  box-shadow: 1px 1px 5px #b4b5b6;
   border-radius: 20px;
 }
 .footer {

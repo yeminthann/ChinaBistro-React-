@@ -68,7 +68,7 @@ class CommentForm extends Component {
     }
 
     handleSubmit = (e) => {
-        
+
         this.props.addComments(this.props.label,this.state.rating, this.state.comment, this.state.username);
         this.toggleModal();
         this.setState({
@@ -125,7 +125,7 @@ class CommentForm extends Component {
     }
 }
 
-function RenderComments ({comments, addComments, label}) {
+function RenderComments ({comments}) {
     console.log(comments.length);
     if(comments.length === 0) {
         return (
@@ -143,7 +143,7 @@ function RenderComments ({comments, addComments, label}) {
                 return (  
                         <li key = {comment.id}>
                             <div className = "p-3 comment-bg">
-                            <p><b>{comment.comment}</b></p>
+                            <p className = "h5">{comment.comment}</p>
                             <p>Rating: {comment.rating}</p>
                             <p>--<i>{comment.author}</i>, {date}</p>
                             </div>
@@ -255,14 +255,14 @@ const DishDetail = (props) => {
                 {itemDetail}
                 <hr className = "bg-info" />
                 <div className = "col-12">
-                <div className = " m-4 text-md-left text-center">
+                <div className = " m-4 text-md-left text-center text-capitalize">
                     <h4>Comments</h4>
                         <Stagger in>
                         <RenderComments 
                             comments = {props.comments}
                             addComments = {props.addComment}
                             label = {props.label}
-                        />
+                            />
                         <CommentForm addComments = {props.addComment} label = {props.label}/>
                         </Stagger>
                     </div>
