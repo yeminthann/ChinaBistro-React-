@@ -126,7 +126,6 @@ class CommentForm extends Component {
 }
 
 function RenderComments ({comments}) {
-    console.log(comments.length);
     if(comments.length === 0) {
         return (
                 <div><i>no comments yet</i></div>
@@ -134,10 +133,14 @@ function RenderComments ({comments}) {
     }
     if(comments.length > 0) {
         const commentsList = comments.map(comment => {
+            
             const date = new Intl.DateTimeFormat('en-US', {
                 year: 'numeric',
                 month: 'short',
-                day: '2-digit'
+                day: '2-digit',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
             }).format(new Date(comment.date));
 
                 return (  
@@ -145,7 +148,7 @@ function RenderComments ({comments}) {
                             <div className = "p-3 comment-bg">
                             <p className = "h5">{comment.comment}</p>
                             <p>Rating: {comment.rating}</p>
-                            <p>--<i>{comment.author}</i>, {date}</p>
+                            <p>--<i>{comment.author}</i> __ {date}</p>
                             </div>
                             <hr className = "bg-muted"/>
                         </li>
@@ -190,11 +193,8 @@ const DishDetail = (props) => {
 
         const specificItems = props.specificItems;
         const menuLength = specificItems.length-1;
-        console.log(menuLength);
 
         const labelAry = item.label.split('');
-        
-        console.log(Number(labelAry[1]+ labelAry[2]));
         const len3 = Number(labelAry[1]+ labelAry[2]);
         if(labelAry.length === 3 ) {
             if(len3 < (menuLength)) {

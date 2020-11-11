@@ -26,7 +26,7 @@ class Home extends Component {
                 <div className = "row">
                     <div className = "col-12 col-sm-6 col-md-4 mb-5">
                         <FadeTransform
-                            in transformProps = {{exitTransform: 'scale(0.5) TranslateX(-100%)'}}
+                            in transformProps = {{exitTransform: 'scale(0.5) TranslateY(-100%)'}}
                         >
                         <div className = "mr-5 ml-5 mb-4 m-md-2">
                         <Link to = "/menu" className = "card-link">
@@ -58,14 +58,14 @@ class Home extends Component {
                     </div>
                     <div className = "col-12 col-sm-12 col-md-4 mb-5">
                     <FadeTransform
-                            in transformProps = {{exitTransform: 'scale(0.5) TranslateX(100%)'}}
+                            in transformProps = {{exitTransform: 'scale(0.5) TranslateY(-100%)'}}
                     >
                     <div className = "mr-5 ml-5 mb-4 m-md-2">
                     <Link to = "/menu" className = "card-link">
                             <Card>
                                 <CardImg src = "/assets/images/menu-tile.jpg" alt = "menu-tile" width = "100%"/>
                                 <CardHeader className = "text-center card-header">
-                                        Map
+                                        Menu
                                 </CardHeader>
                             </Card>
                     </Link>

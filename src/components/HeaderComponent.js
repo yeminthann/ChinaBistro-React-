@@ -181,11 +181,6 @@ class Header extends Component {
                                  Awards
                             </NavLink>
                         </NavItem>
-                        <NavItem>
-                            <NavLink className = "nav-link" to = "/contact">
-                                <span className = "fa fa-address-card fa-lg"></span> Contact
-                            </NavLink>
-                        </NavItem>
                     </Nav>
                     </Collapse>
                 </div>

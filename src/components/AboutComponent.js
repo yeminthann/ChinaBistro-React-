@@ -4,11 +4,11 @@ import {Media} from 'reactstrap';
 class About extends Component {
     render() {
         return (
-            <div className = "text-danger font-weight-bold">
+            <div className = "text-dark h4 font-weight-bold">
                 <div className = "container">
                     <div className = "row">
                         <div className = "col-12">
-                                <Media heading className = "text-center p-1">
+                                <Media heading className = "text-center text-justify h2 p-1">
                                     About This Website
                                 </Media>
                                 <Media body className = "p-3 font-weight-bold">
