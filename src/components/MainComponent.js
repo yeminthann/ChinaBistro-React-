@@ -99,6 +99,7 @@ class Main extends Component {
                  comments = {this.props.comments.filter(comment => comment.label === (match.params.label) )}
 
                  addComment = {this.props.addComment}
+                 label = {match.params.label}
 
                  isLoading = {this.props.menus.isLoading}
                  errMsg = {this.props.menus.errMsg}

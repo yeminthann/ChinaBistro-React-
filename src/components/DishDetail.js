@@ -38,7 +38,94 @@ function RenderDishDetail ({item}) {
     );
 };
 
-function RenderComments ({comments}) {
+class CommentForm extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isModalOpen: false,
+            username: '',
+            email: '',
+            rating: 1,
+            comment: ''
+
+        };
+        this.toggleModal = this.toggleModal.bind(this);
+        this.handleonChange = this.handleonChange.bind(this);
+    }
+    toggleModal() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        })
+    }
+
+    handleonChange (e) {
+        const target = e.target;
+        const value = target.value;
+        const name = target.name;
+        this.setState({
+            [name]: value
+        });
+    }
+
+    handleSubmit = (e) => {
+        
+        this.props.addComments(this.props.label,this.state.rating, this.state.comment, this.state.username);
+        this.toggleModal();
+        this.setState({
+            username: '',
+            email: '',
+            comment: '',
+            rating: 1
+        })
+        e.preventDefault();
+    }
+
+    render() {
+        return (
+        //comment modal
+        <>
+        <Modal isOpen = {this.state.isModalOpen} toggle = {this.toggleModal}>
+            <ModalHeader>Submit Comment</ModalHeader>
+            <ModalBody>
+                <Form onSubmit = {this.handleSubmit}>
+                    <FormGroup>
+                        <Label for = "username">Username</Label>
+                        <Input id = "username" name = "username" placeholder = "username" required onChange = {this.handleonChange} value = {this.state.username}/>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for = "email">Email</Label>
+                        <Input id = "email" name = "email" placeholder = "email" required onChange = {this.handleonChange} value = {this.state.email}/>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label form = "rating">Rating</Label>
+                        <Input type = "select" name = "rating" value = {this.state.rating} onChange = {this.handleonChange}>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </Input>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for = "comment">Comment</Label>
+                        <Input type = "textarea" required onChange = {this.handleonChange} name = "comment" value = {this.state.comment}/>
+                    </FormGroup>
+                    <FormGroup>
+                        <Button className = "btn btn-info">Submit</Button>
+                    </FormGroup>
+                </Form>
+            </ModalBody>
+        </Modal>
+
+        <Button type = 'button' className = "bg-primary" onClick = {this.toggleModal}>
+            Submit Comments
+        </Button>
+        </>
+        );
+    }
+}
+
+function RenderComments ({comments, addComments, label}) {
     console.log(comments.length);
     if(comments.length === 0) {
         return (
@@ -73,78 +160,6 @@ function RenderComments ({comments}) {
     );
 }
 } 
-
-class PostComment extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isModalOpen: false,
-            username: '',
-            email: '',
-            comment: ''
-
-        };
-        this.toggleModal = this.toggleModal.bind(this);
-        this.handleonChange = this.handleonChange.bind(this);
-    }
-    toggleModal() {
-        this.setState({
-            isModalOpen: !this.state.isModalOpen
-        })
-    }
-
-    handleonChange (e) {
-        const target = e.target;
-        const value = target.value;
-        const name = target.name;
-        this.setState({
-            [name]: value
-        });
-    }
-
-    handleSubmit = (e) => {
-        alert(`Thanks a lot ${this.state.username} for submitting: \n
-        Email: ${this.state.email} \n
-        Comment: ${this.state.comment}`);
-        this.toggleModal();
-        e.preventDefault();
-    }
-
-    render() {
-        return (
-        //comment modal
-        <>
-        <Modal isOpen = {this.state.isModalOpen} toggle = {this.toggleModal}>
-            <ModalHeader>Submit Comment</ModalHeader>
-            <ModalBody>
-                <Form onSubmit = {this.handleSubmit}>
-                    <FormGroup>
-                        <Label for = "username">Username</Label>
-                        <Input id = "username" name = "username" placeholder = "username" required onChange = {this.handleonChange} value = {this.state.username}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for = "email">Email</Label>
-                        <Input id = "email" name = "email" placeholder = "email" required onChange = {this.handleonChange} value = {this.state.email}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for = "comment">Comment</Label>
-                        <Input type = "textarea" required onChange = {this.handleonChange} name = "comment" value = {this.state.comment}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Button>Submit</Button>
-                    </FormGroup>
-                </Form>
-            </ModalBody>
-        </Modal>
-
-        <Button type = 'button' className = "bg-primary" onClick = {this.toggleModal}>
-            Submit Comments
-        </Button>
-        </>
-        );
-    }
-}
-
 
 
 const DishDetail = (props) => {
@@ -243,8 +258,12 @@ const DishDetail = (props) => {
                 <div className = " m-4 text-md-left text-center">
                     <h4>Comments</h4>
                         <Stagger in>
-                        <RenderComments comments = {props.comments} />
-                        <PostComment />
+                        <RenderComments 
+                            comments = {props.comments}
+                            addComments = {props.addComment}
+                            label = {props.label}
+                        />
+                        <CommentForm addComments = {props.addComment} label = {props.label}/>
                         </Stagger>
                     </div>
                 </div>
