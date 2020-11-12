@@ -18,9 +18,8 @@ body {
   font-family: monospace;
   font-weight: bolder;
 }
-.jum-img {
-  box-shadow: 2px 2px 2px 2px rgb(146, 138, 138);
-  border-radius: 20px;
+.jum-carousel {
+  box-shadow: 2px 3px 2px 3px rgb(85, 81, 81);
 }
 .card-header{
   color: #000;
