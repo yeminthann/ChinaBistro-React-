@@ -98,7 +98,7 @@ class Home extends Component {
                     <FadeTransform
                             in transformProps = {{exitTransform: 'scale(0.5) TranslateY(-100%)'}}
                     >
-                    <div className = "mr-md-2 ml-md-2 mr-5 ml-5">
+                    <div className = "mr-sm-2 ml-sm-2 mr-5 ml-5">
                     <Link to = "/menu" className = "card-link">
                             <Card>
                                 <CardImg src = "/assets/images/menu-tile.jpg" alt = "menu-tile" width = "100%"/>
