@@ -10,6 +10,7 @@ import { fetchMenu, addComment } from '../redux/ActionCreaters';
 import DishDetail from './DishDetail';
 import About from './AboutComponent';
 import Award from './AwardComponent';
+import Contact from './ContactComponent';
 import SpecialMenu from './SpecialMenu';
 import ScrollToTop from './ScrollToTop';
 import { actions } from 'react-redux-form';
@@ -117,6 +118,7 @@ class Main extends Component {
                     <Route exact path = "/menu/:specific_menu" component = {SpecificMenuPage} />
                     <Route path = "/about" component = {About} />
                     <Route path = "/awards" component = {Award} />
+                    <Route path = "/contact" component = {Contact} />
                     <Redirect to = "/home" />
                 </Switch>
                 <Footer />
