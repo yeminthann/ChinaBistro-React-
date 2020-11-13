@@ -9,7 +9,9 @@ class About extends Component {
                     <div className = "row">
                         <div className = "col-12">
                                 <Media heading className = "text-center text-justify h2 p-1">
+                                    <span className = "page-header">
                                     About This Website
+                                    </span>
                                 </Media>
                                 <Media body className = "p-3 font-weight-bold">
                                     <p>

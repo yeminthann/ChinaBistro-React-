@@ -65,6 +65,9 @@ body {
   box-shadow: 1px 1px 5px #b4b5b6;
   border-radius: 20px;
 }
+.page-header {
+  border-bottom: 3px solid rgb(109, 128, 75);
+}
 .footer {
   background-color: rgb(70, 67, 67);
   color: wheat;

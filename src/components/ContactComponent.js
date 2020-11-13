@@ -5,9 +5,17 @@ import { Form, Control, Errors, LocalForm } from 'react-redux-form';
 
 //UI Component
 class Contact extends Component {
+    constructor(props) {
+        super(props);
 
+        this.handleSubmit = this.handleSubmit.bind(this);   
+    }
+
+    handleSubmit (values)  {
+        alert(JSON.stringify(values));
+        alert(`Have a nice day ${values.firstname} ${values.lastname} \n Thansks for submitting feedback\n Here is your feedback\n Feedback: ${values.message}`)
+    };
     render() {
-
         return (
             <div style = {{background: 'rgb(70, 67, 55)'}}>
                 <div className = "container">
@@ -54,11 +62,13 @@ class Contact extends Component {
                         </div>
                         <div className = "col-12">
                             <hr className = "bg-dark" />
-                            <h3 className = "text-center text-primary mt-5">
-                                Send Us Your FeedBack <hr className = "bg-info"/>
+                            <h3 className = "text-center text-primary mt-5 mb-5">
+                                <span className = "page-header">
+                                Send Us Your FeedBack
+                                </span>
                             </h3>
                             <div className = "text-info bg-dark feedback-form p-5 m-1 mb-5">
-                            <LocalForm>
+                            <LocalForm onSubmit = {(values)=>this.handleSubmit(values)}>
                                 <Row className = "form-group">
                                     <Label for = "firstname" className = "text-sm-right" sm = {3}>FirstName</Label>
                                     <Col sm = {8}>
@@ -131,8 +141,8 @@ class Contact extends Component {
                                     <Label className = "text-sm-right" for = "message" sm = {3}>FeedBack</Label>
                                     <Col sm = {8}>
                                         <Control.textarea 
-                                            model = ".message"
                                             id = "message"
+                                            model = ".message"
                                             name = "message"
                                             rows = "6"
                                             className = "form-control bg-dark text-white"
