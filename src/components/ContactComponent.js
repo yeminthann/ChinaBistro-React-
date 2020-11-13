@@ -40,16 +40,12 @@ class Contact extends Component {
         return (
             <div style = {{background: 'rgb(70, 67, 55)'}}>
                 <div className = "container">
-                    <div className = "row">
-                        <div className = "col-12">
                             <Breadcrumb className = "font-weight-bold sticky-top">
                                 <BreadcrumbItem>
                                     <Link to = "/home">Home</Link>
                                 </BreadcrumbItem>
                                 <BreadcrumbItem active>Contact</BreadcrumbItem>
                             </Breadcrumb>
-                        </div>
-                    </div>
                     <div className = "row">
                         <h2 className = "text-center col-12">Contact Us <hr className = "bg-info"/></h2>
                         

@@ -39,7 +39,7 @@ body {
 .card-link:hover {
   text-decoration: none;
 }
-.card {
+.card, .feedback-form {
   box-shadow: 1px 5px 5px 2px rgb(94, 92, 88);
   border-radius: 10px;
 }
@@ -61,7 +61,7 @@ body {
   color: aqua;
   background-color: rgb(112, 109, 109);
 }
-.comment-bg, .feedback-form {
+.comment-bg {
   box-shadow: 1px 1px 5px #b4b5b6;
   border-radius: 20px;
 }
