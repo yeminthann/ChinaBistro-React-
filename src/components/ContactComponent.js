@@ -28,7 +28,7 @@ class Contact extends Component {
     constructor(props) {
         super(props);
 
-        this.handleSubmit = this.handleSubmit.bind(this);   
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit (values)  {
@@ -96,8 +96,9 @@ class Contact extends Component {
                                         <Control.text 
                                             id = "firstname"
                                             model = ".firstname"
-                                            className = "form-control bg-dark text-primary"
+                                            className = "form-control bg-dark"
                                             name = 'firstname'
+                                            style = {{color: '#000'}}
                                             validators = {{
                                                 required,
                                                 minLength: minLength(3),
@@ -122,8 +123,9 @@ class Contact extends Component {
                                         <Control.text 
                                             id = "lastname"
                                             model = ".lastname"
-                                            className = "form-control bg-dark text-primary"
+                                            className = "form-control bg-dark"
                                             name = "lastname"
+                                            style = {{color: '#000'}}
                                             validators = {{
                                                 required,
                                                 minLength: minLength(3),
@@ -148,8 +150,9 @@ class Contact extends Component {
                                         <Control.text
                                             id = "email"
                                             model = ".email"
-                                            className = "form-control bg-dark text-primary"
+                                            className = "form-control bg-dark"
                                             name = "email"
+                                            style = {{color: '#000'}}
                                             validators = {{
                                                 required,
                                                 validEmail
@@ -172,8 +175,9 @@ class Contact extends Component {
                                         <Control.text
                                             id = "telnum"
                                             model = ".telnum"
-                                            className = "form-control bg-dark text-primary"
+                                            className = "form-control bg-dark"
                                             name = "telnum"
+                                            style = {{color: '#000'}}
                                             validators = {{
                                                 required,
                                                 isNumber: isNumber(11)
@@ -197,8 +201,9 @@ class Contact extends Component {
                                         <Control.checkbox
                                             id = "checkbox"
                                             model = ".agree"
-                                            className = "form-check-input bg-dark text-white"
+                                            className = "form-check-input bg-dark"
                                             name = "agree"
+                                            style = {{color: '#000'}}
                                             />May We Contact U
                                         </Label>
                                         </div>
@@ -222,7 +227,8 @@ class Contact extends Component {
                                             model = ".message"
                                             name = "message"
                                             rows = "6"
-                                            className = "form-control bg-dark text-white"
+                                            className = "form-control bg-dark"
+                                            style = {{color: '#000'}}
                                             validators = {{
                                                 required
                                             }}

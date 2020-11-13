@@ -68,6 +68,14 @@ body {
 .page-header {
   border-bottom: 3px solid rgb(109, 128, 75);
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 500s, color 500s;
+}
+
 .footer {
   background-color: rgb(70, 67, 67);
   color: wheat;
