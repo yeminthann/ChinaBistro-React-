@@ -3,7 +3,27 @@ import { Breadcrumb, BreadcrumbItem, Card, CardHeader, CardBody, CardTitle, Card
 import { Link } from 'react-router-dom';
 import { Form, Control, Errors, LocalForm } from 'react-redux-form';
 
-//UI Component
+// validations (true or false)
+const required = val => val && val.length; 
+const minLength = len => {
+    return val => {
+        if(!val) return true; //no errors
+        if(val && val.length >= len) return true; //no errors
+    }
+};
+const maxLength = len => val => !val || (val.length <= len);
+const isNumber = len => {
+    return val => {
+        if(!val) return true;
+        if(val && !isNaN(Number(val)) && val.length === len) return true;
+    }
+};
+const validEmail = val => {
+    if(!val) return true;
+    if(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)) return true;
+}
+
+
 class Contact extends Component {
     constructor(props) {
         super(props);
@@ -77,6 +97,21 @@ class Contact extends Component {
                                             model = ".firstname"
                                             className = "form-control bg-dark text-primary"
                                             name = 'firstname'
+                                            validators = {{
+                                                required,
+                                                minLength: minLength(3),
+                                                maxLength: maxLength(15)
+                                            }}
+                                        />
+                                        <Errors 
+                                            className = "text-danger"
+                                            model = ".firstname"
+                                            show = "touched"
+                                            messages = {{
+                                                required: 'Required',
+                                                minLength: 'Must be greater than 3 characters!',
+                                                maxLength: 'Must be at most 15 characters!'
+                                            }}
                                         />
                                     </Col>
                                 </Row>
@@ -88,6 +123,21 @@ class Contact extends Component {
                                             model = ".lastname"
                                             className = "form-control bg-dark text-primary"
                                             name = "lastname"
+                                            validators = {{
+                                                required,
+                                                minLength: minLength(3),
+                                                maxLength: maxLength(15)
+                                            }}
+                                        />
+                                        <Errors 
+                                            className = "text-danger"
+                                            model = ".lastname"
+                                            show = "touched"
+                                            messages = {{
+                                                required: 'Required!',
+                                                minLength: 'Must be at least 3 characters!',
+                                                maxLength: 'Must be at most 15 characters!'
+                                            }}
                                         />
                                     </Col>
                                 </Row>
@@ -99,6 +149,19 @@ class Contact extends Component {
                                             model = ".email"
                                             className = "form-control bg-dark text-primary"
                                             name = "email"
+                                            validators = {{
+                                                required,
+                                                validEmail
+                                            }}
+                                        />
+                                        <Errors 
+                                            className = "text-danger"
+                                            model = ".email"
+                                            show = "touched"
+                                            messages = {{
+                                                required: 'Required!',
+                                                validEmail: 'Invalid Email!'
+                                            }}
                                         />
                                     </Col>
                                 </Row>
@@ -110,6 +173,19 @@ class Contact extends Component {
                                             model = ".telnum"
                                             className = "form-control bg-dark text-primary"
                                             name = "telnum"
+                                            validators = {{
+                                                required,
+                                                isNumber: isNumber(11)
+                                            }}
+                                        />
+                                        <Errors
+                                            className = "text-danger"
+                                            model = '.telnum'
+                                            show = "touched"
+                                            messages = {{
+                                                required: 'Required!',
+                                                isNumber: 'Invaild Number!',
+                                            }}
                                         />
                                     </Col>
                                 </Row>
@@ -146,6 +222,17 @@ class Contact extends Component {
                                             name = "message"
                                             rows = "6"
                                             className = "form-control bg-dark text-white"
+                                            validators = {{
+                                                required
+                                            }}
+                                        />
+                                        <Errors
+                                            className = "text-danger"
+                                            model = '.message'
+                                            show = "touched"
+                                            messages = {{
+                                                required: 'Please share your thoughts'
+                                            }}
                                         />
                                     </Col>
                                 </Row>
