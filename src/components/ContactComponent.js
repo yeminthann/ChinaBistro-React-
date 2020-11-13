@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardHeader, CardBody, CardTitle, CardText, Col, Label, Row, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Form, Control, Errors, LocalForm } from 'react-redux-form';
+import { Form, Control, Errors, actions } from 'react-redux-form';
 
 // validations (true or false)
 const required = val => val && val.length; 
@@ -33,7 +33,8 @@ class Contact extends Component {
 
     handleSubmit (values)  {
         alert(JSON.stringify(values));
-        alert(`Have a nice day ${values.firstname} ${values.lastname} \n Thansks for submitting feedback\n Here is your feedback\n Feedback: ${values.message}`)
+        alert(`Have a nice day ${values.firstname} ${values.lastname} \n Thansks for submitting feedback\n Here is your feedback\n Feedback: ${values.message}`);
+        this.props.resetFeedbackForm();
     };
     render() {
         return (
@@ -88,7 +89,7 @@ class Contact extends Component {
                                 </span>
                             </h3>
                             <div className = "text-info bg-dark feedback-form p-5 m-1 mb-5">
-                            <LocalForm onSubmit = {(values)=>this.handleSubmit(values)}>
+                            <Form onSubmit = {(values)=>this.handleSubmit(values)} model = 'feedback'>
                                 <Row className = "form-group">
                                     <Label for = "firstname" className = "text-sm-right" sm = {3}>FirstName</Label>
                                     <Col sm = {8}>
@@ -241,7 +242,7 @@ class Contact extends Component {
                                         <Button type = "submit" color = "primary">Send FeedBack</Button>
                                     </Col>
                                 </Row>
-                            </LocalForm>
+                            </Form>
                             </div>
                         </div>
                     </div>

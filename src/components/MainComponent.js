@@ -24,7 +24,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     fetchMenu: () => {dispatch(fetchMenu())},
-    resetForm: () => {dispatch(actions.reset('reset'))},
+    resetFeedbackForm: () => {dispatch(actions.reset('feedback'))},
     addComment: (label, rating, comment, author) => {
         dispatch(addComment(label, rating, comment, author))
     }
@@ -118,7 +118,7 @@ class Main extends Component {
                     <Route exact path = "/menu/:specific_menu" component = {SpecificMenuPage} />
                     <Route path = "/about" component = {About} />
                     <Route path = "/awards" component = {Award} />
-                    <Route path = "/contact" component = {Contact} />
+                    <Route path = "/contact" component = {() => <Contact resetFeedbackForm = {this.props.resetFeedbackForm} />} />
                     <Redirect to = "/home" />
                 </Switch>
                 <Footer />
