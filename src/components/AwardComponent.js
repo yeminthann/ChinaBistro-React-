@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 class Award extends Component {
     render() {
         return (
+            <>
             <div className = "container">
                 <div className = "row">
                     <div className = "col-12">
@@ -17,6 +18,7 @@ class Award extends Component {
                     </div>
                 </div>
             </div>
+            </>
         );
     }
 };

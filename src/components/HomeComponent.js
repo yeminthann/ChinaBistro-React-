@@ -41,7 +41,7 @@ class Home extends Component {
         }
         return (
             <div style = {{background: 'rgb(172, 164, 164)'}}>
-            <div className = "container">
+            <div className = "container pb-5">
 
                 <Jumbotron>
                     <div className = "row">

@@ -41,7 +41,7 @@ function RenderCard({isLoading, item, errMsg}) {
 function Menu (props) {
 
         return (
-            <div className = "container">
+            <div className = "container mb-5 pb-5">
                 <Breadcrumb className = "font-weight-bold sticky-top">
                     <BreadcrumbItem>
                         <Link to = "/home">Home</Link>

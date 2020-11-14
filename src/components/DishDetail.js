@@ -275,6 +275,7 @@ const DishDetail = (props) => {
                             Next
                         </Link>
                     </div>
+                    <div className = "push"></div>
             </div>
         );
     }

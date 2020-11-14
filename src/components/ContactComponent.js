@@ -39,7 +39,7 @@ class Contact extends Component {
     render() {
         return (
             <div style = {{background: 'rgb(70, 67, 55)'}}>
-                <div className = "container">
+                <div className = "container pb-5">
                             <Breadcrumb className = "font-weight-bold sticky-top">
                                 <BreadcrumbItem>
                                     <Link to = "/home">Home</Link>
